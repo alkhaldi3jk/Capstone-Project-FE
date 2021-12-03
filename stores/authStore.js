@@ -1,9 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import decode from "jwt-decode";
-import { instance } from "../store/instance";
+import { instance } from "../stores/instance";
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as ImagePicker from 'expo-image-picker';
+// import * as ImagePicker from "expo-image-picker";
 
 class AuthStore {
   user = null;
@@ -13,7 +13,7 @@ class AuthStore {
 
   checkForToken = async () => {
     try {
-      this.user = null
+      this.user = null;
       const token = await AsyncStorage.getItem("myToken");
       if (token) {
         const currentTime = Date.now(); // give us the current time
@@ -55,24 +55,20 @@ class AuthStore {
 
   signin = async (user, navigation, toast) => {
     try {
-        
       const response = await instance.post("/signin", user);
       this.setUser(response.data.token);
-      if (! this.user) {
+      if (!this.user) {
         toast.show({
           title: "Welcome",
           status: "sucess",
-        //   description: "wrong username/password combination",
+          //   description: "wrong username/password combination",
         });
       }
       // navigation.replace("Home");
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
     }
-  
   };
-  
-  
 }
 
 const authStore = new AuthStore();
