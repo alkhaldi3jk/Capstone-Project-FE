@@ -45,11 +45,12 @@ class AuthStore {
     }
   };
 
-  signOut = async () => {
+  signOut = async (navigation) => {
     try {
       delete instance.defaults.headers.common.Authorization;
       await AsyncStorage.removeItem("myToken");
       this.user = null;
+      navigation.navigate("Signin");
     } catch (error) {}
   };
 
