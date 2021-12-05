@@ -1,15 +1,24 @@
 import { Text } from "react-native";
 import React from "react";
-import { Button } from "native-base";
+import { Button, View } from "native-base";
 import authStore from "../../stores/authStore";
+import serviceStore from "../../stores/serviceStore";
+import ServiceItem from "./ServiceItem";
+import { observable } from "mobx";
+import { observer } from "mobx-react-lite";
 
 function Home({ navigation }) {
+  const serviceList = serviceStore.services.map((service) => (
+    <ServiceItem service={service} key={service._id} navigation={navigation} />
+  ));
+
   return (
-    <div>
-      <Text> Maia</Text>
+    <View>
+      <Text> Maia </Text>
+      <View>{serviceList}</View>
       <Button onPress={() => authStore.signOut(navigation)}>Sign out</Button>
-    </div>
+    </View>
   );
 }
 
-export default Home;
+export default observer(Home);
