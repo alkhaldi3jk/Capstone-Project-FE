@@ -1,11 +1,9 @@
 import React from "react";
-
 import authStore from "../../stores/authStore";
 import serviceStore from "../../stores/serviceStore";
 import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
-import { observer } from "mobx-react-lite";
-
+import { observer } from "mobx-react-lite"
 import {
   Heading,
   Icon,
@@ -17,16 +15,13 @@ import {
   Text,
   View,
 } from "native-base";
-// import { Image } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
-export function Home({ navigation }) {
-  const serviceList = serviceStore.services.map((service) => (
-    <ServiceItem service={service} key={service._id} navigation={navigation} />
-  ));
+function Home({ navigation }) {
+ 
 
   return (
-    <View flex="-20">
+    <Box flex="-20">
       <Heading
         // size="xl"
         fontSize="60"
@@ -99,20 +94,23 @@ export function Home({ navigation }) {
       >
         Sign in
       </Button>
-      {/* <Image source={require('../../assets/Maialogo.png')} /> */}
+      </Box>
+      /* <Image source={require('../../assets/Maialogo.png')} /> */
 
+  );
+      };
 
 export default observer(Home);
 
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Home />
-      </Center>
-    </NativeBaseProvider>
-  );
-};
+// export default () => {
+//   return (
+//     <NativeBaseProvider>
+//       <Center flex={1} px="3">
+//         <Home />
+//       </Center>
+//     </NativeBaseProvider>
+//   );
+// };
 
 
