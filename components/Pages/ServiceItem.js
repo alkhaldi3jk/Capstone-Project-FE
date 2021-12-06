@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import { Text, View, Image } from "react-native";
 import { HStack, VStack, Button, Pressable } from "native-base";
@@ -23,3 +26,4 @@ const ServiceItem = ({ service, navigation }) => {
 };
 
 export default observer(ServiceItem);
+

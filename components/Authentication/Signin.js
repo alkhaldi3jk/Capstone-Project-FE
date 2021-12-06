@@ -28,7 +28,7 @@ function Signin({ navigation }) {
 
   return (
     <Center>
-      <Box safeArea p="2" py="8" w="90%" maxW="290">
+      <Box safeArea p="2" py="80" w="90%" maxW="290">
         <Heading
           size="lg"
           fontWeight="600"
@@ -37,7 +37,7 @@ function Signin({ navigation }) {
             color: "warmGray.50",
           }}
         >
-          Sign in now!
+          Sign in 
         </Heading>
         <Heading
           mt="1"
@@ -53,19 +53,64 @@ function Signin({ navigation }) {
 
         <VStack space={3} mt="5">
           <FormControl>
-            <FormControl.Label>Username</FormControl.Label>
+            <FormControl.Label
+            fontWeight="500"
+            lineHeight="0.9"
+            letterSpacing="-1.5"
+            overflow="visible"
+            flexWrap="wrap"
+            position= 'relative'
+            height="1"
+            right="-10"
+            zIndex="2"
+            >Username</FormControl.Label>
             <Input
+             borderRadius="8"
+             borderWidth="2"
+             bg="#F1F2F9"
+             fontSize="14"
+             padding="2"
+             placeholder="Type username..."
+             placeholderTextColor="rgb(170, 170, 170)"
               onChangeText={(username) => setUser({ ...user, username })}
             />
           </FormControl>
           <FormControl>
-            <FormControl.Label>Password</FormControl.Label>
+            <FormControl.Label
+            lineHeight="1.4"
+            fontWeight="500"
+            lineHeight="0.9"
+            letterSpacing="-1.5"
+            overflow="visible"
+            flexWrap="wrap"
+            position= 'relative'
+            height="1"
+            right="-10"
+            zIndex="2"
+            >Password</FormControl.Label>
             <Input
+            placeholder="Type password..."
+            placeholderTextColor="rgb(170, 170, 170)"
+            bg="#F1F2F9"
+            borderRadius="8"
+            borderWidth="2"
+            fontSize="14"
               type="password"
               onChangeText={(password) => setUser({ ...user, password })}
             />
           </FormControl>
-          <Button mt="2" colorScheme="indigo" onPress={handleSubmit}>
+          <Button 
+            mt="1" 
+            borderRadius="8"
+             backgroundColor="#4f59b1"
+             padding="2"
+             size="10"
+             paddingLeft="60"
+             textAlign="center"
+             paddingRight="60"
+             overflow="visible"
+             marginLeft="40"
+          onPress={handleSubmit}>
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
