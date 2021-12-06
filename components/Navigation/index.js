@@ -6,9 +6,9 @@ import Signup from "../Authentication/Signup";
 import Home from "../Pages/home";
 import ServiceList from "../Pages/ServiceList";
 import Profile from "../user/Profile"
-
 import ServiceDetail from "../Pages/ServiceDetail";
-import { roundToNearestPixel } from "react-native/Libraries/Utilities/PixelRatio";
+
+
 
 
 const RootNavigator = () => {
@@ -17,16 +17,19 @@ const RootNavigator = () => {
   return (
 
 
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="ServiceList">
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
       <Screen name="Home" component={Home} />
-      <Screen name="Profile" component={Profile} />
+    <Screen name="Profile" component={Profile}/>
+    <Screen name="ServiceList" component={ServiceList}/>
+  
       <Screen name="ServiceDetail" component={ServiceDetail}  options={({ navigation, route }) => {
           const { service } = route.params;
           return {
             title: service.name,
           }}}/>
+
 
     </Navigator>
   );
