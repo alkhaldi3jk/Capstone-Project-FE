@@ -14,6 +14,7 @@ import {
   NativeBaseProvider,
   Text,
   View,
+  Box
 } from "native-base";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
@@ -103,13 +104,13 @@ function Home({ navigation }) {
 export default observer(Home);
 
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Home />
-      </Center>
-    </NativeBaseProvider>
-  );
-};
+// export default () => {
+//   return (
+//     <NativeBaseProvider>
+//       <Center flex={1} px="3">
+//         <Home />
+//       </Center>
+//     </NativeBaseProvider>
+//   );
+// };
 

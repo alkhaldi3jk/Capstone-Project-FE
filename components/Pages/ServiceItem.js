@@ -47,7 +47,7 @@ const ServiceItem = ({ service, navigation }) => {
           <Box>
             <AspectRatio w="100%" ratio={16 / 9}>
               <Image
-                source={{ uri: baseURL + service.image }}
+                source={{ uri: service.image }}
                 alt="image"
                 borderRadius="20"
                 />

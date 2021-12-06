@@ -29,9 +29,7 @@ const ServiceList = ({ navigation }) => {
     <ScrollView
     vertical={true} 
     >
-    <View>
-    <Text> {serviceList} </Text>
-    </View>
+   {serviceList} 
     </ScrollView>
   )
   };
