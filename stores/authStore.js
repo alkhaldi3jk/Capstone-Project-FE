@@ -39,7 +39,7 @@ class AuthStore {
     try {
       const response = await instance.post("/signup", userData);
       this.setUser(response.data.token);
-      //   navigation.replace("Home");
+        // navigation.replace("Home");
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +61,7 @@ class AuthStore {
       if (!this.user) {
         toast.show({
           title: "Welcome",
-          status: "sucess",
+          status: "Success",
           //   description: "wrong username/password combination",
         });
       }
@@ -70,8 +70,24 @@ class AuthStore {
       console.log("AuthStore -> signin -> error", error);
     }
   };
-}
 
+updateProfile = async (updatedProfile, userId) => {
+  try {
+    const formData = new FormData();
+
+    for(const key in updated){
+      // console.log(key)
+      formData.append(key, updatedProfile[key])
+    }
+    const res = await instance.put(`/user`, formData);
+    this.user = this.user.profile.map((profile) =>
+      user._id === userId ? res.data : profile
+    );
+  } catch (error) {
+    console.log("Stores -> updateProfile -> error", error);
+  }
+}
+}
 const authStore = new AuthStore();
 authStore.checkForToken();
 export default authStore;

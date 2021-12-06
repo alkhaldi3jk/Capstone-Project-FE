@@ -7,9 +7,12 @@ import authStore from "../../stores/authStore";
 import { StyleSheet, Text, View, Image } from "react-native";
 // import { UserProfileUpdate } from "./UserProfileUpdate";
 import { observer } from "mobx-react-lite";
+import ProfileUpdateModal from "./ProfileUpdateModal";
 
- const Profile= (user) => {
+ const Profile= ({route}) => {
   const navigation = useNavigation();
+
+//   const { profile}  = route.params;
 
   return (
     <ScrollView vertical={true}>
@@ -23,12 +26,12 @@ import { observer } from "mobx-react-lite";
               }}
             />
 
-            <Text style={styles.name}>{authStore.user?.username}</Text>
-            <Text style={styles.userInfo}>{authStore.user?.email}</Text>
+            <Text style={styles.name}>{user.username}</Text>
+            {/* <Text style={styles.userInfo}>{authStore.user?.email}</Text> */}
             <Text style={styles.userInfo}>📍Kuwait City </Text>
           </View>
         </View>
-
+        {/* <ProfileUpdateModal Oldprofile={profile}/> */}
         <View>
           <View>
             <IconButton

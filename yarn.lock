@@ -5625,17 +5625,6 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-css@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-css/-/react-native-css-2.1.2.tgz#d001bef7a10f01f39d5d5d3d08051b49994f0b9f"
-  integrity sha1-0AG+96EPAfOdXV09CAUbSZlPC58=
-  dependencies:
-    babel-runtime "^6.26.0"
-    css "^2.2.1"
-    lodash.get "^4.4.2"
-    lodash.set "^4.3.2"
-    pre-commit "^1.2.2"
-    to-camel-case "~0.2.0"
 
 react-native-gesture-handler@~1.10.2:
   version "1.10.3"

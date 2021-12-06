@@ -1,4 +1,11 @@
 import React from "react";
+
+import authStore from "../../stores/authStore";
+import serviceStore from "../../stores/serviceStore";
+import ServiceItem from "./ServiceItem";
+import { observable } from "mobx";
+import { observer } from "mobx-react-lite";
+
 import {
   Heading,
   Icon,
@@ -13,7 +20,11 @@ import {
 // import { Image } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
-export function Home() {
+export function Home({ navigation }) {
+  const serviceList = serviceStore.services.map((service) => (
+    <ServiceItem service={service} key={service._id} navigation={navigation} />
+  ));
+
   return (
     <View flex="-20">
       <Heading
@@ -89,9 +100,10 @@ export function Home() {
         Sign in
       </Button>
       {/* <Image source={require('../../assets/Maialogo.png')} /> */}
-    </View>
-  );
-}
+
+
+export default observer(Home);
+
 
 export default () => {
   return (
@@ -102,3 +114,5 @@ export default () => {
     </NativeBaseProvider>
   );
 };
+
+
