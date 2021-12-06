@@ -103,14 +103,13 @@ function Home({ navigation }) {
 export default observer(Home);
 
 
-// export default () => {
-//   return (
-//     <NativeBaseProvider>
-//       <Center flex={1} px="3">
-//         <Home />
-//       </Center>
-//     </NativeBaseProvider>
-//   );
-// };
-
+export default () => {
+  return (
+    <NativeBaseProvider>
+      <Center flex={1} px="3">
+        <Home />
+      </Center>
+    </NativeBaseProvider>
+  );
+};
 
