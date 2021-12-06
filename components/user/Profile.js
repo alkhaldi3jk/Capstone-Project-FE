@@ -9,10 +9,10 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { observer } from "mobx-react-lite";
 import ProfileUpdateModal from "./ProfileUpdateModal";
 
- const Profile= ({route}) => {
+ const Profile= (user) => {
   const navigation = useNavigation();
 
-//   const { profile}  = route.params;
+  const { trip } = route.params;
 
   return (
     <ScrollView vertical={true}>
@@ -26,12 +26,12 @@ import ProfileUpdateModal from "./ProfileUpdateModal";
               }}
             />
 
-            <Text style={styles.name}>{user.username}</Text>
-            {/* <Text style={styles.userInfo}>{authStore.user?.email}</Text> */}
+            <Text style={styles.name}>{authStore.user?.username}</Text>
+            <Text style={styles.userInfo}>{authStore.user?.password}</Text>
             <Text style={styles.userInfo}>📍Kuwait City </Text>
           </View>
         </View>
-        {/* <ProfileUpdateModal Oldprofile={profile}/> */}
+        <ProfileUpdateModal Oldprofile={Profile}/>
         <View>
           <View>
             <IconButton
