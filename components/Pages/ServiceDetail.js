@@ -1,5 +1,6 @@
 
 import React from "react";
+
 import { observer } from "mobx-react";
 import {
 View,
@@ -21,13 +22,14 @@ import { baseURL} from "../../stores/serviceStore"
 
 function ServiceDetail({route}) {
   // if (tripStore.isLoading) {
+
   //   return <Spinner />;}
 
-
-    const { service } = route.params;
+  const { service } = route.params;
 
   return (
     <View>
+
       {/* <Text> {service.name} </Text>
       <Box
       maxW="100%"
@@ -100,6 +102,7 @@ function ServiceDetail({route}) {
         >
 <Text>Preferences</Text>          
 </Box>
+
     </View>
   );
 }

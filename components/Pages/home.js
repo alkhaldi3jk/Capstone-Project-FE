@@ -3,7 +3,7 @@ import authStore from "../../stores/authStore";
 import serviceStore from "../../stores/serviceStore";
 import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
-import { observer } from "mobx-react-lite"
+import { observer } from "mobx-react-lite";
 import {
   Heading,
   Icon,
@@ -19,8 +19,6 @@ import {
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 function Home({ navigation }) {
- 
-
   return (
     <Box flex="-20">
       <Heading
@@ -54,9 +52,9 @@ function Home({ navigation }) {
         letterSpacing="0"
         lineHeight="20px"
       >
-        {" "}
+       
         The first app-based personal assistant designed for the future of
-        living.{" "}
+        living.
       </Text>
       <Image
         source={{
@@ -95,15 +93,12 @@ function Home({ navigation }) {
       >
         Sign in
       </Button>
-      </Box>
-      /* <Image source={require('../../assets/Maialogo.png')} /> */
-
+    </Box>
+    /* <Image source={require('../../assets/Maialogo.png')} /> */
   );
-      };
+}
 
 export default observer(Home);
-
-
 // export default () => {
 //   return (
 //     <NativeBaseProvider>
