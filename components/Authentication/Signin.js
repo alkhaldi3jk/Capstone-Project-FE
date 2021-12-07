@@ -22,8 +22,7 @@ function Signin({ navigation }) {
   });
 
   const handleSubmit = async () => {
-    await authStore.signin(user);
-    navigation.navigate("Home");
+    await authStore.signin(user, navigation);
   };
 
   return (
