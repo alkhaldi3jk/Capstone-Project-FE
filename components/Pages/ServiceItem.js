@@ -18,44 +18,44 @@ import {
 
 const ServiceItem = ({ service, navigation }) => {
   return (
-    <Box
-      width="361"
-      height="160"
-      borderRadius="20"
-      overflow="visible"
-      opacity="0.75"
-      //   borderColor="coolGray.200"
-      //   borderWidth="20"
-      _dark={{
-        borderColor: "coolGray.600",
-        backgroundColor: "gray.700",
-      }}
-      _web={{
-        shadow: 2,
-        borderWidth: 0,
-      }}
-      _light={{
-        backgroundColor: "gray.50",
-      }}
-    >
-      <Pressable
-        onPress={() => {
-          navigation.navigate("ServiceDetail", { service: service });
-          console.log("click");
-        }}
-      >
-        <Box>
-          <AspectRatio w="100%" ratio={16 / 9}>
-            <Image
-              source={{ uri: service.image }}
-              alt="image"
-              borderRadius="20"
-            />
-          </AspectRatio>
-          <Center
-            // bg="violet.500"
-            _dark={
-              {
+
+  <Box
+          width="361"
+          height="160"
+          borderRadius="20"
+          overflow="visible"
+          opacity="0.75"
+        //   borderColor="coolGray.200"
+        //   borderWidth="20"
+          _dark={{
+            borderColor: "coolGray.600",
+            backgroundColor: "gray.700",
+          }}
+          _web={{
+            shadow: 2,
+            borderWidth: 0,
+          }}
+          _light={{
+            backgroundColor: "gray.50",
+          }}
+        >
+        <Pressable
+          onPress={() => {
+            navigation.navigate("ServiceDetail", { service: service });
+            console.log("click");
+          }}
+        >
+          <Box>
+            <AspectRatio w="100%" ratio={16 / 9}>
+              <Image
+                source={{ uri: service.image }}
+                alt="image"
+                borderRadius="20"
+                />
+                </AspectRatio>
+                <Center
+                // bg="violet.500"
+                _dark={{
                 //   bg: "violet.400",
               }
             }

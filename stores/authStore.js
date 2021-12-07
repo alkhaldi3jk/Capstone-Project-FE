@@ -50,7 +50,9 @@ class AuthStore {
       await AsyncStorage.removeItem("myToken");
       this.user = null;
       navigation.navigate("Signin");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   signin = async (user, navigation, toast) => {

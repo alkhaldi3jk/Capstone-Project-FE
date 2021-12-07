@@ -25,7 +25,15 @@ const ServiceList = ({ navigation }) => {
     <ServiceItem service={service} key={service._id} navigation={navigation} />
   ));
 
-  return <ScrollView vertical={true}>{serviceList}</ScrollView>;
-};
+
+  return (
+    <ScrollView
+    vertical={true} 
+    >
+   {serviceList} 
+    </ScrollView>
+  )
+  };
+
 
 export default observer(ServiceList);
