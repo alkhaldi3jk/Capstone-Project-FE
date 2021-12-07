@@ -3,7 +3,8 @@ import authStore from "../../stores/authStore";
 import serviceStore from "../../stores/serviceStore";
 import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
+import  { Text } from "react-native";
 import {
   Heading,
   Icon,
@@ -12,20 +13,19 @@ import {
   Image,
   Center,
   NativeBaseProvider,
-  Text,
   View,
-  Box
+  Box,
 } from "native-base";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 function Home({ navigation }) {
   return (
-    <Box flex="-20">
+    <Center  flex={1} px="6">
+    <View flex="-20">
       <Heading
-        // size="xl"
         fontSize="60"
         overflow="hidden"
-        fontWeight="900"
+        fontWeight="700"
         // mt="-550"
         mt="-90"
         height="100"
@@ -36,6 +36,7 @@ function Home({ navigation }) {
         letterSpacing="0"
         textAlign="center"
         line-height="25"
+        // fontFamily="Epilogue-seminold"
       >
         Welcome home, we're Maia.
       </Heading>
@@ -48,11 +49,11 @@ function Home({ navigation }) {
         color="#000000"
         fontSize="16"
         textAlign="center"
-        mx="1"
+        mx="2"
         letterSpacing="0"
-        lineHeight="20px"
+        lineHeight="20"
+        fontFamily="Epilogue"
       >
-       
         The first app-based personal assistant designed for the future of
         living.
       </Text>
@@ -71,7 +72,7 @@ function Home({ navigation }) {
         opacity="0.88"
         // bottom="-320"
         bottom="-120"
-        left="4"
+        left="7"
       />
       <Button
         leftIcon={<Icon as={Feather} name="user" size="sm" />}
@@ -81,24 +82,35 @@ function Home({ navigation }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        //  padding="2"
-        //  size="10"
-        //  paddingLeft="20"
-        //  paddingRight="20"
-        //  alignItems="center"
-
-        //  overflowWrap="2"
-        //  marginLeft="25"
-        //  marginRight="25"
+        padding="2"
+        textAlign="center"
+        paddingRight="50"
+        paddingLeft="50"
+       overflow="visible"
+        marginLeft="40"
+        overflow="visible"
+        margin="0"
+        alignItems="center"
+        marginLeft="50"
+        marginRight="50" // centers the button
       >
         Sign in
       </Button>
-    </Box>
-    /* <Image source={require('../../assets/Maialogo.png')} /> */
+      </View>
+      {/* <Image source={require('../../assets/maia_logo.png')}
+      alt="maia-logo"
+      size="sm"
+      marginTop="-1240"
+      size="100"
+      /> */}
+      </Center>
+      
   );
-}
+};
 
 export default observer(Home);
+
+
 // export default () => {
 //   return (
 //     <NativeBaseProvider>
