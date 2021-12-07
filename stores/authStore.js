@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import decode from "jwt-decode";
 import { instance } from "../stores/instance";
-import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 // import * as ImagePicker from "expo-image-picker";
 
@@ -52,7 +51,9 @@ class AuthStore {
       await AsyncStorage.removeItem("myToken");
       this.user = null;
       navigation.navigate("Signin");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   signin = async (user, navigation, toast) => {

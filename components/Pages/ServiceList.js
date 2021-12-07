@@ -47,7 +47,7 @@ const ServiceList = ({ navigation }) => {
                 </HStack>
                 </Center>
                 </ScrollView>
-  )
+)
 };
 
 export default observer(ServiceList);

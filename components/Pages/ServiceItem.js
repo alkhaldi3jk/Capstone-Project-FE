@@ -8,7 +8,6 @@ import {
     Heading,
     AspectRatio,
     Image,
-
     Center,
     HStack,
     Stack,
@@ -98,10 +97,10 @@ const ServiceItem = ({ service, navigation }) => {
           ml="-0.5"
           mt="-1"
         >
+
           {service.subtitle}
         </Text>
       </Stack>
-      
     </Stack>
   </Box>
  
@@ -109,4 +108,3 @@ const ServiceItem = ({ service, navigation }) => {
 };
 
 export default observer(ServiceItem);
-

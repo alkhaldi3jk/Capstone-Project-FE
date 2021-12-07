@@ -29,7 +29,7 @@ const RootNavigator = () => {
       <Screen name="ServiceDetail" component={ServiceDetail}  options={({ navigation, route }) => {
           const { service } = route.params;
           return {
-            title: service.name,
+            name: service.name,
           }}}/>
 
 

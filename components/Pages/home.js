@@ -5,7 +5,6 @@ import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
 import { observer } from "mobx-react-lite"
 import  { Text } from "react-native";
-
 import {
   Heading,
   Icon,
@@ -20,8 +19,6 @@ import {
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 function Home({ navigation }) {
- 
-
   return (
     <Center  flex={1} px="6">
     <View flex="-20">
@@ -108,9 +105,8 @@ function Home({ navigation }) {
       /> */}
       </Center>
       
-
   );
-      };
+};
 
 export default observer(Home);
 
