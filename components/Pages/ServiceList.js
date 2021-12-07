@@ -17,6 +17,7 @@ import {
   Stack,
   ScrollView,
   NativeBaseProvider,
+  Button,
 } from "native-base";
 
 const ServiceList = ({ navigation }) => {
@@ -25,29 +26,28 @@ const ServiceList = ({ navigation }) => {
   ));
 
   return (
-  <ScrollView
-  vertical={true} 
-  >
-  <Center>
+    <ScrollView vertical={true}>
+      <Button onPress={() => authStore.signOut(navigation)}>Sign out</Button>
+      <Center>
         <HStack space="2.5" mt="4" maxW="100%" ratio={16 / 9}>
-          <Stack 
-          maxW="100%"
-          direction="column" 
-          marginLeft="0"
-          marginRight="0"
-      // borderWidth="0.5"
-          mb="2.5" 
-          mt="1.5" 
-          space={5}
-          // rounded="sm"
-          // shadow={"1"}
+          <Stack
+            maxW="100%"
+            direction="column"
+            marginLeft="0"
+            marginRight="0"
+            // borderWidth="0.5"
+            mb="2.5"
+            mt="1.5"
+            space={5}
+            // rounded="sm"
+            // shadow={"1"}
           >
             {serviceList}
           </Stack>
-                </HStack>
-                </Center>
-                </ScrollView>
-)
+        </HStack>
+      </Center>
+    </ScrollView>
+  );
 };
 
 export default observer(ServiceList);
