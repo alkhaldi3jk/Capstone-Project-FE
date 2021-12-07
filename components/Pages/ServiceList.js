@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 // import { Image } from "react-native";
 // import { useNavigation } from "@react-navigation/native";
 import serviceStore from "../../stores/serviceStore";
@@ -18,22 +18,14 @@ import {
   Stack,
   ScrollView,
   NativeBaseProvider,
-} from "native-base"
+} from "native-base";
 
 const ServiceList = ({ navigation }) => {
-    const serviceList = serviceStore.services.map((service) => (
-        <ServiceItem service={service} key={service._id} navigation={navigation} />
-      ));
+  const serviceList = serviceStore.services.map((service) => (
+    <ServiceItem service={service} key={service._id} navigation={navigation} />
+  ));
 
-  return (
-    <ScrollView
-    vertical={true} 
-    >
-    <View>
-    <Text> {serviceList} </Text>
-    </View>
-    </ScrollView>
-  )
-  };
+  return <ScrollView vertical={true}>{serviceList}</ScrollView>;
+};
 
 export default observer(ServiceList);
