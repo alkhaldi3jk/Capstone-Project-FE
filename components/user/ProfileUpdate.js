@@ -12,17 +12,16 @@ import profileStore from "../../stores/profileStore";
 import { observer } from "mobx-react-lite";
 import authStore from "../../stores/authStore";
 
-const ProfileUpdate = ({ oldProfile }) => {
+const ProfileUpdate = ({route}) => {
   const [showModal, setShowModal] = useState(false);
 
   const [updatedProfile, setUpdatedProfile] = useState({
-    // name: oldProfile.name,
+    name: authStore.user,
   });
 
   const handleUpdate = (event) => {
     console.log(updatedProfile);
-
-    profileStore.updateProfile(updatedProfile, oldProfile._id);
+    authStore.updateProfile(oldProfile);
   };
 
   return (
@@ -32,15 +31,11 @@ const ProfileUpdate = ({ oldProfile }) => {
         <Avatar
           name="image"
           type="file"
-          onChangeText={(image) =>
-            setUpdatedProfile({ ...updatedProfile, image })
-          }
+          onChangeText={(image) => setUpdatedProfile({ ...oldProfile.image, image })}
         />
         <FormControl.Label>Name</FormControl.Label>
         <Input
-          onChangeText={(name) =>
-            setUpdatedProfile({ ...updatedProfile, name })
-          }
+          onChangeText={(name) => setUpdatedProfile({ ...oldProfile.name, name })}
         />
         <Input
           p={2}

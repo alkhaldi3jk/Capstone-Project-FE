@@ -67,8 +67,9 @@ const getIcon = (screenName) => {
 
 function CustomDrawerContent(props) {
   const navigation = useNavigation();
-
+ 
   return (
+
     <DrawerContentScrollView {...props} safeArea>
       <IconButton
         icon={<Icon as={Entypo} name="emoji-happy" />}
