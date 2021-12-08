@@ -74,22 +74,23 @@ class AuthStore {
     }
   };
 
-  updateProfile = async (updatedProfile, userId) => {
+  updateProfile = async (updatedProfile) => {
     try {
       const formData = new FormData();
 
-      for (const key in updated) {
+      for (const key in updatedProfile) {
         // console.log(key)
         formData.append(key, updatedProfile[key]);
       }
       const res = await instance.put(`/user`, formData);
-      this.user = this.user.profile.map((profile) =>
-        user._id === userId ? res.data : profile
-      );
+      this.user.profile = res.data
+      console.log(res.data);
     } catch (error) {
       console.log("Stores -> updateProfile -> error", error);
     }
   };
+
+
 }
 const authStore = new AuthStore();
 authStore.checkForToken();
