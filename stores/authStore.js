@@ -4,7 +4,8 @@ import { instance } from "../stores/instance";
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 // import * as ImagePicker from "expo-image-picker";
-
+// REVIEW: Remove all unused imports in all components
+// REVIEW: we only import React in components, stores are not considered components
 class AuthStore {
   user = null;
   constructor() {
@@ -31,6 +32,7 @@ class AuthStore {
     try {
       await AsyncStorage.setItem("myToken", token);
       this.user = decode(token);
+      // REVIEW: Remove console logs if done with them
       //   console.log(this.user);
       instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     } catch (error) {}
@@ -61,6 +63,7 @@ class AuthStore {
       const response = await instance.post("/signin", user);
       this.setUser(response.data.token);
       navigation.replace("ServiceList");
+      //  REVIEW: If you want to use this commented out toast it should be in the catch
       // if (!this.user) {
       //   toast.show({
       //     title: "Welcome",
@@ -82,9 +85,11 @@ class AuthStore {
         formData.append(key, updatedProfile[key]);
       }
       const res = await instance.put(`/user`, formData);
+      // REVIEW: Why is this function name missing?
       nInAction(() => {
         this.user = res.data;
       });
+      // REVIEW: remove console logs
       console.log(res.data);
     } catch (error) {
       console.log("Stores -> updateProfile -> error", error);

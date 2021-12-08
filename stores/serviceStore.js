@@ -12,6 +12,7 @@ class ServiceStore {
 
   fetchList = async () => {
     try {
+      // REVIEW: Remove console logs
       const response = await instance.get("/");
       console.log(response.data);
       this.services = response.data;

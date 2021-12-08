@@ -14,7 +14,7 @@ import Past from "../Pages/Past";
 import Pending from "../Pages/Pending";
 import { observer } from "mobx-react";
 import authStore from "../../stores/authStore";
-
+// REVIEW: Remove unused imports
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 

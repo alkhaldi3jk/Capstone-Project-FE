@@ -70,9 +70,8 @@ const getIcon = (screenName) => {
 
 function CustomDrawerContent(props) {
   const navigation = useNavigation();
- 
-  return (
 
+  return (
     <DrawerContentScrollView {...props} safeArea>
       <IconButton
         icon={<Icon as={Entypo} name="emoji-happy" />}
@@ -196,6 +195,7 @@ function CustomDrawerContent(props) {
                   <Text
                     fontWeight="500"
                     color="gray.700"
+                    // REVIEW: Remove event
                     onPress={(event) => {
                       props.navigation.navigate("Past");
                     }}
