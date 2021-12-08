@@ -13,16 +13,20 @@ import { observer } from "mobx-react-lite";
 import authStore from "../../stores/authStore";
 import * as ImagePicker from "expo-image-picker";
 
-const ProfileUpdate = ({route}) => {
+const ProfileUpdate = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const [updatedProfile, setUpdatedProfile] = useState({
-    name: authStore.user,
-  });
+  // const [updatedProfile, setUpdatedProfile] = useState({
+  //   name: user.profile.name,
+  // });
+
+  const [update,setUpdate]=useState(
+    authStore.user? authStore.user:""
+  )
 
   const handleUpdate = (event) => {
-    console.log(updatedProfile);
-    authStore.updateProfile(oldProfile);
+    authStore.updateProfile(update);
+
   };
 
   const [image, setImage] = useState(null);
@@ -72,12 +76,16 @@ const ProfileUpdate = ({route}) => {
         <Avatar
           name="image"
           type="file"
-          onChangeText={(image) => setUpdatedProfile({ ...oldProfile.image, image })}
+          onPress={(image) =>
+            setUpdate({ ...update, image })
+          }
         />
         <Button onPress={pickImage}> Change Image </Button>
         <FormControl.Label>Name</FormControl.Label>
         <Input
-          onChangeText={(name) => setUpdatedProfile({ ...oldProfile.name, name })}
+          onChangeText={(name) =>
+            setUpdate({ ...update, name })
+          }
         />
         <Input
           p={2}

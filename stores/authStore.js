@@ -79,18 +79,17 @@ class AuthStore {
       const formData = new FormData();
 
       for (const key in updatedProfile) {
-        // console.log(key)
         formData.append(key, updatedProfile[key]);
       }
       const res = await instance.put(`/user`, formData);
-      this.user.profile = res.data
+      nInAction(() => {
+        this.user = res.data;
+      });
       console.log(res.data);
     } catch (error) {
       console.log("Stores -> updateProfile -> error", error);
     }
   };
-
-
 }
 const authStore = new AuthStore();
 authStore.checkForToken();

@@ -12,6 +12,8 @@ import ProfileUpdate from "../user/ProfileUpdate";
 import Upcoming from "../Pages/Upcoming";
 import Past from "../Pages/Past";
 import Pending from "../Pages/Pending";
+import { observer } from "mobx-react";
+import authStore from "../../stores/authStore";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -25,7 +27,11 @@ const RootNavigator = () => {
       <Screen name="AboutUs" component={AboutUs} />
       {/* <Screen name="Requests" component={Requests} /> */}
       <Screen name="Drawer" component={Drawer} />
-      <Screen name="ProfileUpdate" component={ProfileUpdate} />
+      <Screen
+        name="ProfileUpdate"
+        component={ProfileUpdate}
+        // initialParams={{ userProfile: user.profile }}
+      />
       <Screen name="Past" component={Past} />
       <Screen name="Upcoming" component={Upcoming} />
       <Screen name="Pending" component={Pending} />
@@ -44,4 +50,4 @@ const RootNavigator = () => {
   );
 };
 
-export default RootNavigator;
+export default observer(RootNavigator);
