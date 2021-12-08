@@ -24,7 +24,6 @@ function Signup({ navigation }) {
 
   const handleSubmit = async () => {
     await authStore.signup(user, navigation);
-    
   };
 
   return (
@@ -38,7 +37,7 @@ function Signup({ navigation }) {
             color: "warmGray.50",
           }}
         >
-          Sign up 
+          Sign up
         </Heading>
         <Heading
           mt="1"
@@ -54,97 +53,100 @@ function Signup({ navigation }) {
 
         <VStack space={3} mt="5">
           <FormControl>
-            <FormControl.Label 
-            fontWeight="500"
-            lineHeight="0.9"
-            letterSpacing="-1.5"
-            overflow="visible"
-            flexWrap="wrap"
-            position= 'relative'
-            height="1"
-            right="-10"
-            zIndex="2"
-            
-            >Username</FormControl.Label>
+            <FormControl.Label
+              fontWeight="500"
+              lineHeight="0.9"
+              letterSpacing="-1.5"
+              overflow="visible"
+              flexWrap="wrap"
+              position="relative"
+              height="1"
+              right="-10"
+              zIndex="2"
+            >
+              Username
+            </FormControl.Label>
             <Input
-            borderRadius="8"
-            borderWidth="2"
-            bg="#F1F2F9"
-            // borderColor="rgba(0, 0, 0, 0)"
-            // color="rgb(51, 51, 51)"
-            fontSize="14"
-            // maxLength="10"
-            // lineHeight="1.4"
-            padding="2"
-            placeholder="Type username..."
-            placeholderTextColor="rgb(170, 170, 170)"
-            
-            
-            // FormControl="rgb(51, 51, 51)"
-            // color="#333333"
+              borderRadius="8"
+              borderWidth="2"
+              bg="#F1F2F9"
+              // borderColor="rgba(0, 0, 0, 0)"
+              // color="rgb(51, 51, 51)"
+              fontSize="14"
+              // maxLength="10"
+              // lineHeight="1.4"
+              padding="2"
+              placeholder="Type username..."
+              placeholderTextColor="rgb(170, 170, 170)"
+              // FormControl="rgb(51, 51, 51)"
+              // color="#333333"
               onChangeText={(username) => setUser({ ...user, username })}
             />
           </FormControl>
           <FormControl>
-            <FormControl.Label 
-            lineHeight="1.4"
-            fontWeight="500"
-            lineHeight="0.9"
-            letterSpacing="-1.5"
-            overflow="visible"
-            flexWrap="wrap"
-            position= 'relative'
-            height="1"
-            right="-10"
-            zIndex="2"
-            >Email</FormControl.Label>
+            <FormControl.Label
+              lineHeight="1.4"
+              fontWeight="500"
+              lineHeight="0.9"
+              letterSpacing="-1.5"
+              overflow="visible"
+              flexWrap="wrap"
+              position="relative"
+              height="1"
+              right="-10"
+              zIndex="2"
+            >
+              Email
+            </FormControl.Label>
             <Input
-            placeholder="Type email..."
-            placeholderTextColor="rgb(170, 170, 170)"
-            bg="#F1F2F9"
-            borderRadius="8"
-            borderWidth="2"
-            fontSize="14"
+              placeholder="Type email..."
+              placeholderTextColor="rgb(170, 170, 170)"
+              bg="#F1F2F9"
+              borderRadius="8"
+              borderWidth="2"
+              fontSize="14"
               type="email"
               onChangeText={(email) => setUser({ ...user, email })}
             />
           </FormControl>
           <FormControl>
-            <FormControl.Label 
-            lineHeight="1.4"
-            fontWeight="500"
-            lineHeight="0.9"
-            letterSpacing="-1.5"
-            overflow="visible"
-            flexWrap="wrap"
-            position= 'relative'
-            height="1"
-            right="-10"
-            zIndex="2"
-            >Password</FormControl.Label>
+            <FormControl.Label
+              lineHeight="1.4"
+              fontWeight="500"
+              lineHeight="0.9"
+              letterSpacing="-1.5"
+              overflow="visible"
+              flexWrap="wrap"
+              position="relative"
+              height="1"
+              right="-10"
+              zIndex="2"
+            >
+              Password
+            </FormControl.Label>
             <Input
-            placeholder="Type password..."
-            placeholderTextColor="rgb(170, 170, 170)"
-            bg="#F1F2F9"
-            borderRadius="8"
-            borderWidth="2"
-            fontSize="14"
+              placeholder="Type password..."
+              placeholderTextColor="rgb(170, 170, 170)"
+              bg="#F1F2F9"
+              borderRadius="8"
+              borderWidth="2"
+              fontSize="14"
               type="password"
               onChangeText={(password) => setUser({ ...user, password })}
             />
           </FormControl>
-          <Button 
-          mt="1" 
-        borderRadius="8"
-         backgroundColor="#4f59b1"
-         padding="2"
-         size="10"
-         paddingLeft="60"
-         textAlign="center"
-         paddingRight="60"
-         overflow="visible"
-         marginLeft="40"
-        onPress={handleSubmit}>
+          <Button
+            mt="1"
+            borderRadius="8"
+            backgroundColor="#4f59b1"
+            padding="2"
+            size="10"
+            width="20"
+            textAlign="center"
+            overflow="visible"
+            marginLeft="195"
+            onPress={handleSubmit}
+          >
             Sign up
           </Button>
           <HStack mt="6" justifyContent="center">

@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import decode from "jwt-decode";
 import { instance } from "../stores/instance";
+import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 // import * as ImagePicker from "expo-image-picker";
 
@@ -38,8 +39,7 @@ class AuthStore {
     try {
       const response = await instance.post("/signup", userData);
       this.setUser(response.data.token);
-      navigation.navigate("ServiceList");
-      // navigation.replace("Home");
+      navigation.replace("ServiceList");
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +50,7 @@ class AuthStore {
       delete instance.defaults.headers.common.Authorization;
       await AsyncStorage.removeItem("myToken");
       this.user = null;
-      navigation.navigate("Signin");
+      navigation.replace("Home");
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,7 @@ class AuthStore {
     try {
       const response = await instance.post("/signin", user);
       this.setUser(response.data.token);
-      navigation.navigate("ServiceList");
+      navigation.replace("ServiceList");
       // if (!this.user) {
       //   toast.show({
       //     title: "Welcome",

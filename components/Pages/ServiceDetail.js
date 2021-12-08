@@ -1,14 +1,16 @@
 import React from "react";
-import {  Text } from "react-native";
+
+// import { Image, Text } from "react-native";
+
 import serviceStore from "../../stores/serviceStore";
 import { observer } from "mobx-react";
 import {
-View,
+  View,
+  Image,
+  Text,
   Box,
   Heading,
   AspectRatio,
-  Image,
-  // Text,
   Center,
   HStack,
   Stack,
@@ -18,7 +20,7 @@ View,
   Button,
   Spinner,
 } from "native-base";
-import { baseURL} from "../../stores/serviceStore"
+import { baseURL } from "../../stores/serviceStore";
 
 function ServiceDetail({ route }) {
   // if (serviceStore.isLoading) {
@@ -28,13 +30,11 @@ function ServiceDetail({ route }) {
 
   return (
     <View>
-
       <Text> {service.name} </Text>
-      <Image
+      {/* <Image
         source={{ uri: service.image }}
         style={{ width: "10", height: "10" }}
-      />
-
+      /> */}
 
       {/* <Text> {service.name} </Text>
       <Box
@@ -61,7 +61,7 @@ function ServiceDetail({ route }) {
     >
       </Box>   */}
       <Box>
-        <AspectRatio  w="auto" ratio={16 / 9} >
+        <AspectRatio w="auto" ratio={16 / 9}>
           <Image source={{ uri: service.image }} alt="image" />
         </AspectRatio>
         <Center
@@ -69,9 +69,10 @@ function ServiceDetail({ route }) {
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
-            // fontFamily:"normal",
-            height:"auto",
-            width:"auto"
+
+            // fontFamily: "normal",
+            height: "auto",
+            width: "auto",
           }}
           // position="center"
           bottom="0"
@@ -80,8 +81,8 @@ function ServiceDetail({ route }) {
         >
           {service.name}
         </Center>
-</Box>
-<Box
+      </Box>
+      <Box
         bg="white"
         borderRadius="6"
         // padding="3.5"
@@ -90,13 +91,13 @@ function ServiceDetail({ route }) {
         onHoverIn="1.1"
         // fontSize="10"
         fontFamily="normal"
-        >
-<Text>About This Service</Text>          
-</Box>
-<Box>
-<Text>{service.description}</Text>
-</Box>
-<Box
+      >
+        <Text>About This Service</Text>
+      </Box>
+      <Box>
+        <Text>{service.description}</Text>
+      </Box>
+      <Box
         bg="white"
         borderRadius="6"
         // padding="3.5"
@@ -105,11 +106,9 @@ function ServiceDetail({ route }) {
         onHoverIn="1.1"
         fontSize="10"
         fontFamily="normal"
-        >
-<Text>Preferences</Text>          
-</Box>
-
-
+      >
+        <Text>Preferences</Text>
+      </Box>
     </View>
   );
 }

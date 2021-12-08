@@ -3,12 +3,15 @@ import React from "react";
 import Signin from "../Authentication/Signin";
 import Signup from "../Authentication/Signup";
 import ServiceList from "../Pages/ServiceList";
-import Profile from "../user/Profile"
 import ServiceDetail from "../Pages/ServiceDetail";
 import Home from "../Pages/home";
 import { AboutUs } from "../Pages/AboutUs";
-import Drawer from"../Pages/Drawer";
-
+import Drawer from "../Pages/Drawers";
+import Requests from "../Pages/Requests";
+import ProfileUpdate from "../user/ProfileUpdate";
+import Upcoming from "../Pages/Upcoming";
+import Past from "../Pages/Past";
+import Pending from "../Pages/Pending";
 
 
 const RootNavigator = () => {
@@ -16,23 +19,29 @@ const RootNavigator = () => {
 
   return (
 
-
-    <Navigator initialRouteName="ServiceList">
+    <Navigator initialRouteName="Drawer">
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
       <Screen name="Home" component={Home} />
-    <Screen name="Profile" component={Profile}/>
-    <Screen name="ServiceList" component={ServiceList}/>
-    <Screen name="AboutUs" component={AboutUs}/>
-    <Screen name="Drawer" component={Drawer}/>
-  
-      <Screen name="ServiceDetail" component={ServiceDetail}  options={({ navigation, route }) => {
+      <Screen name="ServiceList" component={ServiceList} />
+      <Screen name="AboutUs" component={AboutUs} />
+      {/* <Screen name="Requests" component={Requests} /> */}
+      <Screen name="Drawer" component={Drawer} />
+      <Screen name="ProfileUpdate" component={ProfileUpdate} />
+      <Screen name="Past" component={Past}/>
+      <Screen name="Upcoming" component={Upcoming}/>
+      <Screen name="Pending" component={Pending}/>
+
+      <Screen
+        name="ServiceDetail"
+        component={ServiceDetail}
+        options={({ navigation, route }) => {
           const { service } = route.params;
           return {
             name: service.name,
-          }}}/>
-
-
+          };
+        }}
+      />
     </Navigator>
   );
 };
