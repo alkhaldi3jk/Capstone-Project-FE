@@ -6,11 +6,8 @@ import { StyleSheet } from "react-native";
 import { useFonts, Epilogue } from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
 
-export default function App() {
-  // let [fontsLoaded] = useFonts({
-  //   "Epilogue": require("./assets/Epilogue-2/static/Epilogue-Regular.ttf"),
-  // });
 
+export default function App() {
   return (
     <NavigationContainer>
       <NativeBaseProvider>
@@ -20,11 +17,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+
