@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text } from "react-native";
+import {  Text } from "react-native";
 import serviceStore from "../../stores/serviceStore";
 import { observer } from "mobx-react";
 import {
@@ -8,7 +8,7 @@ View,
   Heading,
   AspectRatio,
   Image,
-  Text,
+  // Text,
   Center,
   HStack,
   Stack,
@@ -69,11 +69,11 @@ function ServiceDetail({ route }) {
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
-            fontFamily:"normal",
+            // fontFamily:"normal",
             height:"auto",
             width:"auto"
           }}
-          position="center"
+          // position="center"
           bottom="0"
           px="3"
           py="1.5"
@@ -88,7 +88,7 @@ function ServiceDetail({ route }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        fontSize="10"
+        // fontSize="10"
         fontFamily="normal"
         >
 <Text>About This Service</Text>          

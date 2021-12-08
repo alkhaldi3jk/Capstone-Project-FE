@@ -17,7 +17,7 @@ const RootNavigator = () => {
   return (
 
 
-    <Navigator initialRouteName="Drawer">
+    <Navigator initialRouteName="ServiceList">
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Signup} />
       <Screen name="Home" component={Home} />
