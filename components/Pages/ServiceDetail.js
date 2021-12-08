@@ -67,11 +67,11 @@ function ServiceDetail({ route }) {
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
-            fontFamily: "normal",
+            // fontFamily: "normal",
             height: "auto",
             width: "auto",
           }}
-          position="center"
+          // position="center"
           bottom="0"
           px="3"
           py="1.5"

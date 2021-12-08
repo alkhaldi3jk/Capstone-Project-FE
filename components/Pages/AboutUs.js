@@ -12,13 +12,41 @@ import { Text } from "react-native";
 export const AboutUs = () => {
   return (
     <View>
-      <Image
-        source={require("../../assets/undraw_meet_the_team_re_4h08.svg")}
-      />
-      ;
-      <Text pt="3" mt="400">
-        About us blah blah...illustrations will go here
-      </Text>
+     <Image
+          source={{
+            uri: "https://images.unsplash.com/photo-1601132359864-c974e79890ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+          }}
+          alt="image"
+          width="390"
+          height="486"
+          // overflow="visible"
+          />
+          <Center>
+      <Text
+      pt="3" 
+      mt="400"
+      width="326"
+      height="60"
+      fontWeights="600"
+      fontWeight="600"
+      overflow="hidden"
+      wordWrap="break-word"
+      color="#000000"
+      fontSize="16"
+      textAlign="center"
+      mx="2"
+      letterSpacing="0"
+      lineHeight="20"
+      fontFamily="Epilogue"
+      
+  // fontStyle= "normal"
+  // fontFamily= "Epilogue"
+  >Maia is your personal butler. Whatever you need done, Maia can help. </Text>
+  <Text
+  width="219"
+  height="45"
+  fontWeight="800">  We provide personalized services that help save you time  so you can do more of  the things  that matter most.</Text>
+  </Center>
     </View>
   );
 };

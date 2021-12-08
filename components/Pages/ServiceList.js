@@ -27,7 +27,7 @@ const ServiceList = ({ navigation }) => {
 
   return (
     <ScrollView vertical={true}>
-      <Button onPress={() => authStore.signOut(navigation)}>Sign out</Button>
+      {/* <Button onPress={() => authStore.signOut(navigation)}>Sign out</Button> */}
       <Center>
         <HStack space="2.5" mt="4" maxW="100%" ratio={16 / 9}>
           <Stack
