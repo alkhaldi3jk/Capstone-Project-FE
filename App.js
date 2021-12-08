@@ -4,6 +4,7 @@ import React from "react";
 import Navigation from "./components/Navigation";
 import { StyleSheet } from "react-native";
 import { useFonts, Epilogue } from "@expo-google-fonts/inter";
+import * as Font from 'expo-font';
 
 export default function App() {
   // let [fontsLoaded] = useFonts({

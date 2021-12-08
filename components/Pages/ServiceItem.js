@@ -53,13 +53,14 @@ const ServiceItem = ({ service, navigation }) => {
           opacity="0.75" />
         </AspectRatio>
         <Center
-          bg="white"
+          // bg="white"
           _dark={{
             bg: "#f1ff9",
           }}
           _text={{
-            color: "black",
-            fontWeight: "700",
+            color: "white",
+            // fontFamily:"Roboto_medium",
+            fontWeight: "400",
             fontSize: "20",
             wdith:"36",
             height:"68"
@@ -71,10 +72,30 @@ const ServiceItem = ({ service, navigation }) => {
         >
           {service.name}
         </Center>
+        <Center
+          // bg="white"
+          _dark={{
+            bg: "#f1ff9",
+          }}
+          _text={{
+            color: "white",
+            // fontFamily:"Roboto_medium",
+            fontWeight: "200",
+            fontSize: "20",
+            wdith:"36",
+            height:"68"
+          }}
+          position="absolute"
+          bottom="3"
+          px="3"
+          py="2"
+        >
+          {service.subtitle}
+        </Center>
       </Box>
     </Pressable>
 
-    <Stack p="4" space={3}>
+    {/* <Stack p="4" space={3}>
       <Stack space={2}>
         <Heading 
         size="md" 
@@ -82,10 +103,12 @@ const ServiceItem = ({ service, navigation }) => {
         width="363"
         height="68"
         >
+          HI
+          {service.subtitle} 
           {service.title}
-        </Heading>
-        <Text
-          fontSize="xs"
+        </Heading> */}
+        {/* <Text
+          fontSize="lg"
         
           _light={{
             color: "#0000ff",
@@ -97,11 +120,11 @@ const ServiceItem = ({ service, navigation }) => {
           ml="-0.5"
           mt="-1"
         >
-
+          
           {service.subtitle}
-        </Text>
-      </Stack>
-    </Stack>
+        </Text>  */}
+      {/* </Stack>
+    </Stack> */}
   </Box>
  
 );
