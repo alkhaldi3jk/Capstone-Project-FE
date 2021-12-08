@@ -33,6 +33,9 @@ import {
 } from "native-base";
 import ProfileUpdate from "../user/ProfileUpdate";
 import Upcoming from "../Pages/Upcoming";
+import Pending from "./Pending";
+import Past from "./Past";
+import ServiceList from "./ServiceList";
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
   return (
@@ -102,11 +105,10 @@ function CustomDrawerContent(props) {
       <VStack space="6" my="2" mx="1">
         <Box px="4">
           <Text bold color="gray.700">
-            .
-            {/* {authStore.user} */}
+            Hi {authStore.user?.username}
           </Text>
           <Text fontSize="14" mt="1" color="gray.500" fontWeight="500">
-            text for something
+            Let us help you
           </Text>
         </Box>
         <VStack divider={<Divider />} space="4">
@@ -141,6 +143,7 @@ function CustomDrawerContent(props) {
               </Pressable>
             ))}
           </VStack>
+          {/* divider */}
           <VStack space="5">
             <Text fontWeight="500" fontSize="14" px="5" color="gray.500">
               My Requests
@@ -153,7 +156,13 @@ function CustomDrawerContent(props) {
                     size="5"
                     as={<MaterialCommunityIcons name="progress-check" />}
                   />
-                  <Text color="gray.700" fontWeight="500">
+                  <Text
+                    color="gray.700"
+                    fontWeight="500"
+                    onPress={(event) => {
+                      props.navigation.navigate("Upcoming");
+                    }}
+                  >
                     Upcoming Requests
                   </Text>
                 </HStack>
@@ -165,7 +174,13 @@ function CustomDrawerContent(props) {
                     size="5"
                     as={<MaterialCommunityIcons name="progress-clock" />}
                   />
-                  <Text color="gray.700" fontWeight="500">
+                  <Text
+                    color="gray.700"
+                    fontWeight="500"
+                    onPress={(event) => {
+                      props.navigation.navigate("Pending");
+                    }}
+                  >
                     Pending Requests
                   </Text>
                 </HStack>
@@ -177,7 +192,13 @@ function CustomDrawerContent(props) {
                     size="5"
                     as={<MaterialCommunityIcons name="progress-close" />}
                   />
-                  <Text fontWeight="500" color="gray.700">
+                  <Text
+                    fontWeight="500"
+                    color="gray.700"
+                    onPress={(event) => {
+                      props.navigation.navigate("Past");
+                    }}
+                  >
                     Past Requests
                   </Text>
                 </HStack>
@@ -201,7 +222,10 @@ function MyDrawer() {
         <Drawer.Screen name="Talk to Maia" component={Home} />
         {/* <Drawer.Screen name="test" component={Upcoming} /> */}
         <Drawer.Screen name="Profile" component={ProfileUpdate} />
-        <Drawer.Screen name="Complaints" component={Home} />
+        <Drawer.Screen name="Complaints" component={ServiceList} />
+        {/* <Drawer.Screen name="Upcoming" component={Upcoming} /> */}
+        {/* <Drawer.Screen name="Pending" component={Pending} /> */}
+        {/* <Drawer.Screen name="Past" component={Past} /> */}
         <Drawer.Screen
           name="logout"
           component={Home}

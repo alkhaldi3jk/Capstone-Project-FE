@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormControl,
   Input,
@@ -11,6 +11,7 @@ import {
 import profileStore from "../../stores/profileStore";
 import { observer } from "mobx-react-lite";
 import authStore from "../../stores/authStore";
+import * as ImagePicker from "expo-image-picker";
 
 const ProfileUpdate = ({ oldProfile }) => {
   const [showModal, setShowModal] = useState(false);
@@ -25,6 +26,46 @@ const ProfileUpdate = ({ oldProfile }) => {
     profileStore.updateProfile(updatedProfile, oldProfile._id);
   };
 
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== "web") {
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== "granted") {
+          alert("Sorry, we need camera roll permissions to make this work!");
+        }
+      }
+    })();
+  }, []);
+
+  const pickImage = async () => {
+    try {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+
+        quality: 1,
+      });
+
+      if (!result.cancelled) {
+        const localUri = result.uri;
+        const filename = localUri.split("/").pop();
+        const match = /.(\w+)$/.exec(filename);
+        const image = {
+          uri: localUri,
+          name: filename,
+          type: `match ? image/${match[1]} : image`,
+        };
+        setUpdatedProfile({ ...profile, image: image });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <FormControl>
       <Stack mx={4}>
@@ -36,6 +77,7 @@ const ProfileUpdate = ({ oldProfile }) => {
             setUpdatedProfile({ ...updatedProfile, image })
           }
         />
+        <Button onPress={pickImage}> Change Image </Button>
         <FormControl.Label>Name</FormControl.Label>
         <Input
           onChangeText={(name) =>
@@ -83,6 +125,20 @@ const ProfileUpdate = ({ oldProfile }) => {
         <FormControl.ErrorMessage>Something is wrong.</FormControl.ErrorMessage>
       </Stack>
       <Button
+        mt="1"
+        borderRadius="8"
+        backgroundColor="#4f59b1"
+        padding="2"
+        size="10"
+        width="20"
+        textAlign="center"
+        overflow="visible"
+        marginLeft="295"
+        onPress={handleUpdate}
+      >
+        Save
+      </Button>
+      <Button
         mt="2"
         mt="1"
         borderRadius="8"
@@ -92,26 +148,12 @@ const ProfileUpdate = ({ oldProfile }) => {
         width="20"
         textAlign="center"
         overflow="visible"
-        marginLeft="195"
+        marginLeft="295"
         onPress={() => {
           setShowModal(false);
         }}
       >
         Cancel
-      </Button>
-      <Button
-        mt="1"
-        borderRadius="8"
-        backgroundColor="#4f59b1"
-        padding="2"
-        size="10"
-        width="20"
-        textAlign="center"
-        overflow="visible"
-        marginLeft="195"
-        onPress={handleUpdate}
-      >
-        Save
       </Button>
     </FormControl>
   );

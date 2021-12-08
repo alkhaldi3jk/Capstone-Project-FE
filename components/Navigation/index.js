@@ -13,7 +13,6 @@ import Upcoming from "../Pages/Upcoming";
 import Past from "../Pages/Past";
 import Pending from "../Pages/Pending";
 
-
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
@@ -27,9 +26,9 @@ const RootNavigator = () => {
       {/* <Screen name="Requests" component={Requests} /> */}
       <Screen name="Drawer" component={Drawer} />
       <Screen name="ProfileUpdate" component={ProfileUpdate} />
-      <Screen name="Past" component={Past}/>
-      <Screen name="Upcoming" component={Upcoming}/>
-      <Screen name="Pending" component={Pending}/>
+      <Screen name="Past" component={Past} />
+      <Screen name="Upcoming" component={Upcoming} />
+      <Screen name="Pending" component={Pending} />
 
       <Screen
         name="ServiceDetail"
