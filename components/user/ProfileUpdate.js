@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {  Platform } from 'react-native';
 import {
   FormControl,
   Input,
@@ -81,12 +82,8 @@ const ProfileUpdate = () => {
           }
         />
         <Button onPress={pickImage}> Change Image </Button>
+
         <FormControl.Label>Name</FormControl.Label>
-        <Input
-          onChangeText={(name) =>
-            setUpdate({ ...update, name })
-          }
-        />
         <Input
           p={2}
           placeholder="Update name.."
@@ -95,9 +92,12 @@ const ProfileUpdate = () => {
           borderRadius="8"
           borderWidth="2"
           fontSize="14"
+          width="250"
+          onChangeText={(name) =>
+            setUpdate({ ...update, name })
+          }
         />
 
-        {/* <FormControl.ErrorMessage>Something is wrong.</FormControl.ErrorMessage> */}
         <FormControl.Label mt="-0.4">Email ID</FormControl.Label>
         <Input
           p={2}
@@ -108,24 +108,22 @@ const ProfileUpdate = () => {
           borderRadius="8"
           borderWidth="2"
           fontSize="14"
+          width="250"
         />
 
-        <FormControl.ErrorMessage>Something is wrong.</FormControl.ErrorMessage>
-        <FormControl.Label mt="-0.4">Mobile</FormControl.Label>
+        <FormControl.Label mt="-0.4">Age</FormControl.Label>
         <Input
           p={2}
           mt="0"
-          placeholder="Update number.."
+          placeholder="Update age.."
           placeholderTextColor="rgb(170, 170, 170)"
           bg="#F1F2F9"
           borderRadius="8"
           borderWidth="2"
           fontSize="14"
+          width="200"
         />
-        <FormControl.HelperText>
-          We'll keep this between us.
-        </FormControl.HelperText>
-        <FormControl.ErrorMessage>Something is wrong.</FormControl.ErrorMessage>
+       
       </Stack>
       <Button
         mt="1"

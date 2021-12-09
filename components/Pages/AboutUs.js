@@ -37,7 +37,7 @@ export const AboutUs = () => {
       mx="2"
       letterSpacing="0"
       lineHeight="20"
-      fontFamily="Epilogue"
+      // fontFamily="Epilogue"
       
   // fontStyle= "normal"
   // fontFamily= "Epilogue"
