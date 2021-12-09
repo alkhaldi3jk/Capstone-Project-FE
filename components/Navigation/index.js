@@ -19,18 +19,40 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="ProfileUpdate">
-      <Screen name="Signin" component={Signin} />
-      <Screen name="Signup" component={Signup} />
-      <Screen name="Home" component={Home} />
-      <Screen name="ServiceList" component={ServiceList} />
-      <Screen name="AboutUs" component={AboutUs} />
+    <Navigator initialRouteName="Drawer">
+      <Screen name="Signin" component={Signin} 
+      options={{
+      headerShown: false,
+    }} />
+      <Screen name="Signup" component={Signup} 
+      options={{
+        headerShown: false,
+      }} />
+      <Screen name="Home" component={Home} 
+      // options={{
+      //   headerShown: false,
+      // }} 
+      />
+      <Screen name="ServiceList" component={ServiceList} 
+      options={{
+        headerShown: false,
+      }} />
+      <Screen name="AboutUs" component={AboutUs} 
+       options={{
+        headerShown: false,
+      }} />
       {/* <Screen name="Requests" component={Requests} /> */}
-      <Screen name="Drawer" component={Drawer} />
+      <Screen name="Drawer" component={Drawer} 
+       options={{
+        headerShown: false,
+      }} />
       <Screen
         name="ProfileUpdate"
         component={ProfileUpdate}
         // initialParams={{ userProfile: user.profile }}
+        options={{
+          headerShown: false,
+        }} 
       />
       <Screen name="Past" component={Past} />
       <Screen name="Upcoming" component={Upcoming} />

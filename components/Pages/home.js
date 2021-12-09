@@ -4,6 +4,7 @@ import serviceStore from "../../stores/serviceStore";
 import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
 import { observer } from "mobx-react-lite";
+import Signin from "../Authentication/Signin";
 import { Text } from "react-native";
 import {
   Heading,
@@ -19,7 +20,7 @@ import {
 } from "native-base";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
-function Home({ navigation }) {
+function Home({ route, navigation }) {
   return (
     <ScrollView vertical={true}>
       <Center flex={1} px="6">
@@ -54,7 +55,7 @@ function Home({ navigation }) {
             mx="6"
             letterSpacing="0"
             lineHeight="22"
-            fontFamily="Epilogue"
+            // fontFamily="Epilogue"
           >
             The first app-based personal assistant designed for the future of
             living.
@@ -95,7 +96,7 @@ function Home({ navigation }) {
             alignItems="center"
             marginLeft="50"
             marginRight="50" // centers the button
-            onPress={() => navigation.replace("Signin")}
+            onPress={() => navigation.navigate("Signin")}
           >
             Sign in
           </Button>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Home from "./home";
-// import { Feather, MaterialIcons } from '@expo/vector-icons';
+import UserAvatar from "react-native-user-avatar";
 import { NavigationContainer } from "@react-navigation/native";
 // import { observer } from "mobx-react-lite";
 import { useNavigation } from "@react-navigation/native";
@@ -70,12 +70,20 @@ const getIcon = (screenName) => {
 
 function CustomDrawerContent(props) {
   const navigation = useNavigation();
- 
-  return (
 
+  return (
     <DrawerContentScrollView {...props} safeArea>
+      <UserAvatar
+        // px="3"
+        // size="sm"
+        // alignItems="left"
+        // size={50}
+        name="Ghadah Budhhair"
+      />
+
       <IconButton
-        icon={<Icon as={Entypo} name="emoji-happy" />}
+        icon={<Icon as={Entypo} name="emoji-happy" 
+        />}
         borderRadius="full"
         _icon={{
           color: "violet.500",
@@ -101,7 +109,7 @@ function CustomDrawerContent(props) {
             size: "2xl",
           },
         }}
-      />
+      /> 
 
       <VStack space="6" my="2" mx="1">
         <Box px="4">
@@ -216,7 +224,14 @@ function MyDrawer() {
   return (
     <Box safeArea flex={1}>
       <Drawer.Navigator
-        drawerContent={(props) => <CustomDrawerContent {...props} />}
+        drawerContent={(props) => (
+          <CustomDrawerContent
+            {...props}
+            options={{
+              headerShown: false,
+            }}
+          />
+        )}
       >
         {/* <Drawer.Screen name="Outbox" component={Home} /> */}
         <Drawer.Screen name="Wallet" component={Home} />
