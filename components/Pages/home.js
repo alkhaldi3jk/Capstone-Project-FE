@@ -25,12 +25,22 @@ function Home({ route, navigation }) {
     <ScrollView vertical={true}>
       <Center flex={1} px="6">
         <View>
+          <Image
+            source={require("../../assets/maia_logo.png")}
+            alt="Maia Logo"
+            size="sm"
+            //   marginTop="-1240"
+            margin="12"
+            //   mt="-10"
+            size="100"
+            left="100"
+          />
           <Heading
             fontSize="60"
             overflow="hidden"
             fontWeight="700"
             // mt="-80"
-            mt="25"
+            mt="-41"
             height="90"
             width="400"
             color="#000000"
@@ -39,6 +49,7 @@ function Home({ route, navigation }) {
             letterSpacing="0"
             textAlign="center"
             line-height="25"
+
             // fontFamily="Epilogue-seminold"
           >
             Welcome home, we're Maia.
@@ -101,14 +112,6 @@ function Home({ route, navigation }) {
             Sign in
           </Button>
         </View>
-        <Image
-          source={require("../../assets/maia_logo.png")}
-          alt="Maia Logo"
-          size="sm"
-          //   marginTop="-1240"
-          margin="33"
-          size="100"
-        />
       </Center>
     </ScrollView>
   );
