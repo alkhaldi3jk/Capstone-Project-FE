@@ -14,12 +14,13 @@ import Past from "../Pages/Past";
 import Pending from "../Pages/Pending";
 import { observer } from "mobx-react";
 import authStore from "../../stores/authStore";
+import { BookingForm } from "../Pages/BookingForm";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="Drawer">
       <Screen
         name="Signin"
         component={Signin}
@@ -71,9 +72,9 @@ const RootNavigator = () => {
           headerShown: false,
         }}
       />
-      <Screen name="Past" component={Past} />
+      {/* <Screen name="Past" component={Past} />
       <Screen name="Upcoming" component={Upcoming} />
-      <Screen name="Pending" component={Pending} />
+      <Screen name="Pending" component={Pending} /> */}
 
       <Screen
         name="ServiceDetail"

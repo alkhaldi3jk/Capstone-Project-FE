@@ -77,15 +77,14 @@ class AuthStore {
   updateProfile = async (updatedProfile) => {
     try {
       const formData = new FormData();
-
       for (const key in updatedProfile) {
         formData.append(key, updatedProfile[key]);
       }
-      const res = await instance.put(`/user`, formData);
-      nInAction(() => {
-        this.user = res.data;
-      });
-      console.log(res.data);
+      console.log("hiii");
+      const res = await instance.put(`/users`, formData);
+      // REVIEW: Why is this function name missing?
+      this.user = res.data;
+      this.isLoading = false;
     } catch (error) {
       console.log("Stores -> updateProfile -> error", error);
     }
