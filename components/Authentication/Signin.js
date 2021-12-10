@@ -112,7 +112,7 @@ function Signin({ navigation }) {
             textAlign="center"
             overflow="visible"
             marginLeft="195"
-            onPress={handleSubmit}
+            onPress={handleSubmit,()=>{navigation.navigate("ServiceList")}}
           >
             Sign in
           </Button>
