@@ -20,7 +20,7 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="Drawer">
+    <Navigator initialRouteName="Home">
       <Screen
         name="Signin"
         component={Signin}

@@ -12,7 +12,7 @@ class ServiceStore {
 
   fetchList = async () => {
     try {
-      const response = await instance.get("/");
+      const response = await instance.get("/services");
       console.log(response.data);
       this.services = response.data;
       console.log("hi" + this.services);
