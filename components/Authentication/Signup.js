@@ -141,11 +141,10 @@ function Signup({ navigation }) {
             backgroundColor="#4f59b1"
             padding="2"
             size="10"
-            paddingLeft="60"
+            width="20"
             textAlign="center"
-            paddingRight="60"
             overflow="visible"
-            marginLeft="40"
+            marginLeft="195"
             onPress={handleSubmit}
           >
             Sign up
