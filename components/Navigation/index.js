@@ -14,13 +14,17 @@ import Past from "../Pages/Past";
 import Pending from "../Pages/Pending";
 import { observer } from "mobx-react";
 import authStore from "../../stores/authStore";
-import { BookingForm } from "../Pages/BookingForm";
+import BookingForm from "../Pages/BookingForm";
+import MyDatePicker from "../Pages/MyDatePicker";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="Drawer">
+    <Navigator initialRouteName="Home">
+      <Screen name="BookingForm" component={BookingForm} />
+      {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
+
       <Screen
         name="Signin"
         component={Signin}
