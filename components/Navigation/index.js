@@ -22,6 +22,7 @@ const RootNavigator = () => {
 
   return (
     <Navigator initialRouteName="Home">
+
       <Screen name="BookingForm" component={BookingForm} />
       {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
 
