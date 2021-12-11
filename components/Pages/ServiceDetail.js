@@ -20,7 +20,7 @@ import {
   Button,
   Spinner,
 } from "native-base";
-import { baseURL } from "../../stores/serviceStore";
+import { baseURL } from "../../stores/instance";
 
 function ServiceDetail({ route }) {
   // if (serviceStore.isLoading) {
@@ -62,7 +62,7 @@ function ServiceDetail({ route }) {
       </Box>   */}
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
-          <Image source={{ uri: service.image }} alt="image" />
+          <Image source={{ uri: baseURL + service.image }} alt="image" />
         </AspectRatio>
         <Center
           _text={{
