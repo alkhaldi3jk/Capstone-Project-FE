@@ -52,6 +52,6 @@ class RequestStore {
   };
 }
 
-const serviceStore = new RequestStore();
+const requestStore = new RequestStore();
 
-export default serviceStore;
+export default requestStore;
