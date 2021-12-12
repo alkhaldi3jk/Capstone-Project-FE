@@ -17,6 +17,8 @@ import {
   Spinner,
 } from "native-base";
 import { baseURL } from "../../stores/serviceStore";
+import { baseURL } from "../../stores/instance";
+import RequestList from "./RequestList";
 
 function ServiceDetail({ route }) {
   // if (serviceStore.isLoading) {
@@ -102,6 +104,7 @@ function ServiceDetail({ route }) {
         // fontFamily="normal"
       >
         <Text>Preferences</Text>
+        <RequestList/>
       </Box>
     </View>
   );

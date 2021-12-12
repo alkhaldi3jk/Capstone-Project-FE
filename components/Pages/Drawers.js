@@ -1,6 +1,6 @@
 import * as React from "react";
 import Home from "./home";
-import UserAvatar from "react-native-user-avatar";
+// import UserAvatar from "react-native-user-avatar";
 import { NavigationContainer } from "@react-navigation/native";
 // import { observer } from "mobx-react-lite";
 import { useNavigation } from "@react-navigation/native";
@@ -88,7 +88,7 @@ function CustomDrawerContent(props) {
         // alignItems="left"
         // size={50}
         name="Ghadah Budhhair"
-      /> */}
+      /> */}   
       <IconButton
         icon={<Icon as={Entypo} name="emoji-happy" />}
         borderRadius="full"
