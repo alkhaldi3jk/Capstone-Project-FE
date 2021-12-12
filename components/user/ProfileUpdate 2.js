@@ -11,6 +11,8 @@ import {
 import profileStore from "../../stores/profileStore";
 import { observer } from "mobx-react-lite";
 import authStore from "../../stores/authStore";
+import RequestList from "../Pages/RequestList";
+import RequestItem from "../Pages/RequestItem";
 
 const ProfileUpdate = ({ oldProfile }) => {
   const [showModal, setShowModal] = useState(false);
@@ -51,7 +53,7 @@ const ProfileUpdate = ({ oldProfile }) => {
           borderWidth="2"
           fontSize="14"
         />
-
+<RequestItem/>
         {/* <FormControl.ErrorMessage>Something is wrong.</FormControl.ErrorMessage> */}
         <FormControl.Label mt="-0.4">Email ID</FormControl.Label>
         <Input
