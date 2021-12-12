@@ -1,10 +1,9 @@
 import React from "react";
-// import { Chip } from "react-native-paper";
 import { View,  Button, StyleSheet } from "react-native";
 import { Text } from "native-base";
 import { useState } from "react";
 import DatePicker from "react-native-neat-date-picker";
-// import  DatePickerIOS from '@react-native-community/datetimepicker';
+
 
 function BookingForm() {
   // const [chosenDate, setChosenDate] = useState(new Date());
@@ -38,11 +37,15 @@ function BookingForm() {
 
   return (
     <View>
-   <Text top="5" position="absolute" alignItems="center">
-       
-       Pick a time
-       </Text>
-      <DatePicker
+       <Button
+       color="#4f59b1"
+       mt="1"
+       backgroundColor="#4f59b1"
+       size="2"
+       title={"Pick a date"}
+       onPress={openDatePicker}
+       />
+       <DatePicker
         isVisible={showDatePicker}
         mode={"single"}
         onCancel={onCancel}
@@ -53,15 +56,7 @@ function BookingForm() {
         colorOptions={colorOptions}
       /> 
       </View>
-      /* <DatePickerIOS
-      value={Date}
-      mode={"datetime"}
-        date={chosenDate}
-        onDateChange={setChosenDate}
-        style={styles.container}
-      /> */
      
-    
 
   );
 }

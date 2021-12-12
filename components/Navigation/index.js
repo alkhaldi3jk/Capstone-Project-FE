@@ -15,19 +15,16 @@ import Pending from "../Pages/Pending";
 import { observer } from "mobx-react";
 import authStore from "../../stores/authStore";
 import BookingForm from "../Pages/BookingForm";
-import Appointment from "../Pages/Appointment";
-import Booking from "../Pages/Booking";
 import ToDoList from "../Pages/ToDoList/ToDoList";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="BookingForm">
+    <Navigator initialRouteName="ServiceList">
 
       <Screen name="BookingForm" component={BookingForm} />
-      <Screen name="Appointment" component={Appointment} />
-      <Screen name="Booking" component={Booking} />
+      
       <Screen name="ToDoList" component={ToDoList} />
 
       <Screen
