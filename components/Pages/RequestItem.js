@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { baseURL } from "../../Stores/instance";
 import { Button, HStack } from "native-base";
 import { observer } from "mobx-react";
 import NumericInput from "react-native-numeric-input";
@@ -17,10 +16,7 @@ const RequestItem = ({ detail }) => {
   console.log(detail);
   return (
     <HStack w="100%" alignItems="center" space="3">
-      {/* <Image
-        source={{ uri: baseURL + detail.image }}
-        style={{ width: 100, height: 100 }}
-      /> */}
+      <Text>let's test</Text>
       <Text>{detail.name}</Text>
       <NumericInput
         valueType="integer"
