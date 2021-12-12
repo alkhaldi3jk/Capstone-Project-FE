@@ -6,7 +6,6 @@ import authStore from "../../stores/authStore";
 import ServiceItem from "./ServiceItem";
 import { observer } from "mobx-react";
 import { Pressable, View } from "react-native";
-import { baseURL } from "../../stores/instance";
 import {
   Box,
   Heading,

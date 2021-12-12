@@ -56,7 +56,6 @@ function BookingForm() {
         colorOptions={colorOptions}
       /> 
       </View>
-     
 
   );
 }
@@ -68,5 +67,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  
+
 });

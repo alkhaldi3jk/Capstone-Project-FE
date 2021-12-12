@@ -7,13 +7,8 @@ import ServiceDetail from "../Pages/ServiceDetail";
 import Home from "../Pages/home";
 import { AboutUs } from "../Pages/AboutUs";
 import Drawer from "../Pages/Drawers";
-import Requests from "../Pages/Requests";
 import ProfileUpdate from "../user/ProfileUpdate";
-import Upcoming from "../Pages/Upcoming";
-import Past from "../Pages/Past";
-import Pending from "../Pages/Pending";
 import { observer } from "mobx-react";
-import authStore from "../../stores/authStore";
 import BookingForm from "../Pages/BookingForm";
 import ToDoList from "../Pages/ToDoList/ToDoList";
 
@@ -21,10 +16,10 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="ServiceList">
 
-      <Screen name="BookingForm" component={BookingForm} />
-      
+    <Navigator initialRouteName="Home">
+
+
       <Screen name="ToDoList" component={ToDoList} />
 
       <Screen
@@ -85,7 +80,7 @@ const RootNavigator = () => {
       <Screen
         name="ServiceDetail"
         component={ServiceDetail}
-        options={({ navigation, route }) => {
+        options={({ navigation,route }) => {
           const { service } = route.params;
           return {
             name: service.name,
