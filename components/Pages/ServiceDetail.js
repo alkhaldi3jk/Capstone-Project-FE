@@ -1,5 +1,9 @@
-import React from "react";
-import { Image, Text } from "react-native";
+
+import React, { useState } from "react";
+import { Button, Image, Text } from "react-native";
+import { View, Box, AspectRatio, Center, Icon } from "native-base";
+import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
+import DatePicker from "react-native-neat-date-picker";
 import { 
 View, 
 Box, 
@@ -17,9 +21,7 @@ Select } from "native-base";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 
-import { useState } from "react";
-import DatePicker from "react-native-neat-date-picker";
-import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
+
 
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
@@ -53,32 +55,7 @@ function ServiceDetail({ route, navigation }) {
   return (
     <ScrollView vertical={true}>
     <View>
-      {/* <Box
-      maxW="100%"
-      rounded="sm"
-      overflow="visible"
-      borderColor="#faebd7"
-      marginLeft="0"
-      marginRight="0"
-      borderWidth="1"
-      _dark={{
-        borderColor: "coolGray.600",
-        backgroundColor: "gray.700",
-        backgroundSize:"cover"
-      }}
-      _web={{
-        shadow: 2,
-        borderWidth: 40,
-      }}
-      _light={{
-        backgroundColor: "gray.50",
-      }}
-      shadow={"3"}
-    >
-      </Box>   */}
       <Text> {service.name} </Text>
-
-
       <Image
         source={{ uri: service.image }}
         style={{ width: 10, height: 10 }}
@@ -115,12 +92,9 @@ function ServiceDetail({ route, navigation }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-
         // fontSize="10"
         fontFamily="normal"
-
         fontSize="11px"
-
       >
         <Text
           style={{
@@ -158,7 +132,6 @@ function ServiceDetail({ route, navigation }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-
         fontSize="10"
         fontFamily="normal"
       >
@@ -239,14 +212,10 @@ onPress={() => navigation.navigate("Pricing")}
       >
         Request
       </Button>
-      
-      
-
+     
         <Text>Preferences</Text>
-        <RequestList options={service.option}/>
 
-
-      >
+        <RequestList options={service.option} />
         <Text
           style={{
             color: "#181616",
@@ -262,14 +231,8 @@ onPress={() => navigation.navigate("Pricing")}
           Preferences
         </Text>
         <RequestList />
-
         <Text>Preferences</Text>
-
-
-
         <RequestList options={service.option}/>
-
-
       </Box>
       
       </Center>

@@ -42,10 +42,16 @@ class RequestStore {
   // };
   addRequest = async (option) => {
     try {
-      const formData = new FormData();
-      for (const key in option) {
-        // console.log(key)
-        formData.append(key, option[key]);
+      const findRequest = this.items.find(
+        (item) => item.option._id === option._id
+      );
+      if (findRequest) {
+        findRequest.option = option;
+      } else {
+        const newRequest = {
+          option: option,
+        };
+        this.items.push(newRequest);
       }
       const response = await instance.post("/request", formData);
       this.items.push(response.data);
@@ -74,6 +80,8 @@ class RequestStore {
     } catch (error) {
       console.log(error);
     }
+
+
   };
 }
 
