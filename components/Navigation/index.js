@@ -22,17 +22,7 @@ const RootNavigator = () => {
   
   return (
 
-
-    <Navigator InitialRouteName="UserAppointment">
-
-      <Screen 
-      name="UserAppointment"
-      component={UserAppointment} />
-
-<Screen
-        name="Pricing"
-        component={Pricing}
-        />
+    <Navigator initialRouteName="Signin">
 
       {!authStore.user ? (
         <>
@@ -51,6 +41,7 @@ const RootNavigator = () => {
               headerShown: false,
             }}
           />
+
           <Screen
             name="Signup"
             component={Signup}

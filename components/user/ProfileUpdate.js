@@ -42,23 +42,27 @@ function ProfileUpdate() {
               setUpdate({ ...update, name });
             }}
             value={authStore.user?.profile.name}
-            isDisabled={true}
+
+            // isDisabled={true}
+
           />
-          <FormControl.Label mt="5">Email ID</FormControl.Label>
+
+
+          <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
             p={2}
             mt="0.1"
-            placeholder="Update email.."
+            placeholder="Update Address.."
             placeholderTextColor="rgb(170, 170, 170)"
             bg="#F1F2F9"
             borderRadius="8"
             borderWidth="2"
             fontSize="14"
-            onChangeText={(email) => {
-              setUpdate({ ...update, email });
+            onChangeText={(address) => {
+              setUpdate({ ...update, address });
             }}
-            defaultValue={authStore.user?.profile.email}
-            isDisabled={true}
+            defaultValue={authStore.user?.profile.address}
+
           />
 
           <FormControl.Label mt="5">Age</FormControl.Label>

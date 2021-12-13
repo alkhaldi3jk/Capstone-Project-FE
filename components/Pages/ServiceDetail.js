@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Text } from "react-native";
+
 import { 
 View, 
 Box, 
@@ -52,12 +53,18 @@ function ServiceDetail({ route, navigation }) {
   return (
     <ScrollView vertical={true}>
     <View>
+
     
+
+
+      <Text> {service.name} </Text>
+
+
       <Image
         source={{ uri: service.image }}
         style={{ width: 10, height: 10 }}
       />
-      
+
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
           <Image source={{ uri: baseURL + service.image }} alt="image" />
@@ -67,9 +74,11 @@ function ServiceDetail({ route, navigation }) {
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
+
             height: "auto",
             width: "auto",
           }}
+          // position="center"
           bottom="0"
           px="3"
           py="1.5"
@@ -84,7 +93,12 @@ function ServiceDetail({ route, navigation }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
+
+        // fontSize="10"
+        fontFamily="normal"
+
         fontSize="11px"
+
       >
         <Heading
         size="sm"
@@ -108,7 +122,11 @@ function ServiceDetail({ route, navigation }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
+
+        fontSize="10"
+        fontFamily="normal"
       >
+
         <Heading 
         // flex={1} 
         px="6"
@@ -188,7 +206,16 @@ onPress={() => navigation.navigate("Pricing")}
       
       
 
-        {/* <RequestList options={service.options}/> */}
+        <Text>Preferences</Text>
+        <RequestList options={service.option}/>
+
+      >
+        <Text>Preferences</Text>
+
+
+        <RequestList options={service.option}/>
+
+
       </Box>
       
       </Center>
