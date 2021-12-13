@@ -13,7 +13,6 @@ const RequestItem = ({ detail }) => {
     serviceStore.addRequest(detail);
     // setQuantity(value);
   };
-  console.log(detail);
   return (
     <HStack w="100%" alignItems="center" space="3">
       <Text>let's test</Text>

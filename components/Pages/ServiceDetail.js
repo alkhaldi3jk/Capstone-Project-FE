@@ -16,7 +16,6 @@ import {
   Button,
   Spinner,
 } from "native-base";
-import { baseURL } from "../../stores/serviceStore";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 
@@ -60,7 +59,7 @@ function ServiceDetail({ route }) {
       </Box>   */}
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
-          <Image source={{ uri: service.image }} alt="image" />
+          <Image source={{ uri: baseURL+ service.image }} alt="image" />
         </AspectRatio>
         <Center
           _text={{
@@ -104,7 +103,7 @@ function ServiceDetail({ route }) {
         // fontFamily="normal"
       >
         <Text>Preferences</Text>
-        <RequestList/>
+        {/* <RequestList options={service.options}/> */}
       </Box>
     </View>
   );
