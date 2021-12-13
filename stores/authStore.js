@@ -35,7 +35,6 @@ class AuthStore {
       runInAction(() => {
         this.user = decode(token);
       });
-      //   console.log(this.user);
       instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     } catch (error) {}
   };
@@ -86,7 +85,6 @@ class AuthStore {
       for (const key in updatedProfile) {
         formData.append(key, updatedProfile[key]);
       }
-      console.log("hiii");
       const res = await instance.put(`/users`, formData);
       // REVIEW: Why is this function name missing?
       this.user = res.data;

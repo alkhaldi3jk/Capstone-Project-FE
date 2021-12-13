@@ -23,7 +23,6 @@ class RequestStore {
         };
         this.items.push(newRequest);
       }
-      console.log(newRequest);
     } catch (error) {
       console.log(error);
     }
@@ -40,7 +39,6 @@ class RequestStore {
         ...item, //another soultion remove line 82 keep 84
         detail: item.detail._id,
       }));
-      // console.log(cart); //check
       const res = await instance.post("/checkout", { items: cart });
       this.items = [];
       alert("I'm a cute message");

@@ -42,7 +42,6 @@ const ServiceItem = ({ service, navigation }) => {
       <Pressable
         onPress={() => {
           navigation.navigate("ServiceDetail", { service: service });
-          console.log("click");
         }}
       >
         <Box>
