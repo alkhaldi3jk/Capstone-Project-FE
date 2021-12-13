@@ -14,6 +14,7 @@ class RequestStore {
     try {
       const res = await instance.get("/options");
       this.items = res.data;
+      console.log(res.data)
     } catch (error) {
       console.log(error);
     }
