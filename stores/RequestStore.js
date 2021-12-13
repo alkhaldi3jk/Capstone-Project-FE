@@ -10,16 +10,16 @@ class RequestStore{
 
       ]
       
-      addRequest = async (detail) => {
+      addRequest = async (option) => {
         try {
           const findRequest = this.request.find(
-            (item) => item.detail._id === detail._id
+            (item) => item.option._id === option._id
           );
           if (findRequest) {
-            findRequest.detail = detail;
+            findRequest.option = option;
           } else {
             const newRequest = {
-                detail: detail,
+                option: option,
             };
             this.items.push(newRequest);
           }
@@ -29,8 +29,8 @@ class RequestStore{
         }
       };
 
-      removeRequest = async (detailId) => {
-        this.items = this.items.filter((item) => item.detail._id !== detailId);
+      removeRequest = async (optionId) => {
+        this.items = this.items.filter((item) => item.option._id !== optionId);
         await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
       };
     
@@ -38,7 +38,7 @@ class RequestStore{
         try {
           const cart = this.items.map((item) => ({
             ...item, //another soultion remove line 82 keep 84
-            detail: item.detail._id,
+            option: item.option._id,
           }));
           // console.log(cart); //check
           const res = await instance.post("/checkout", { items: cart });

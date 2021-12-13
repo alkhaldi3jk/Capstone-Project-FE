@@ -23,7 +23,7 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="BookingForm">
+    <Navigator initialRouteName="Signin">
 
       <Screen name="BookingForm" component={BookingForm} />
       <Screen name="Appointment" component={Appointment} />

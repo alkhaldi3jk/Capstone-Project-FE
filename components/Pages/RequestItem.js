@@ -7,21 +7,21 @@ import NumericInput from "react-native-numeric-input";
 import serviceStore from "../../stores/serviceStore";
 import { useState } from "react";
 
-const RequestItem = ({ detail }) => {
-  const [quantity, setQuantity] = useState(detail);
+const RequestItem = ({ option }) => {
+  const [quantity, setQuantity] = useState(option);
 
   const handleAdd = () => {
-    serviceStore.addRequest(detail);
+    serviceStore.addRequest(option);
     // setQuantity(value);
   };
-  console.log(detail);
+  console.log(option);
   return (
     <HStack w="100%" alignItems="center" space="3">
       {/* <Image
-        source={{ uri: baseURL + detail.image }}
+        source={{ uri: baseURL + option.image }}
         style={{ width: 100, height: 100 }}
       /> */}
-      <Text>{detail.name}</Text>
+      <Text>{option.name}</Text>
       <NumericInput
         valueType="integer"
         totalHeight={30}
