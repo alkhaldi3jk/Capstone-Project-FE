@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+
+import React from "react";
+
 import { Image, Text } from "react-native";
-import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
-import DatePicker from "react-native-neat-date-picker";
-import {
-  Button,
-  View,
-  Box,
-  AspectRatio,
-  Center,
-  Heading,
-  Input,
-  FormControl,
-  CheckIcon,
-  Icon,
-  ScrollView,
-  WarningOutlineIcon,
-  Select,
-} from "native-base";
+import { View, Box, AspectRatio, Center } from "native-base";
+
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
+import RequestUpdate from "./RequestUpdate";
+
 
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
@@ -221,6 +210,7 @@ function ServiceDetail({ route, navigation }) {
         </Center>
       </View>
     </ScrollView>
+
   );
 }
 
