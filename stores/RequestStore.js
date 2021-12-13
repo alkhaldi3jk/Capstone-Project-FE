@@ -21,22 +21,35 @@ class RequestStore {
   };
 
 
+  // addRequest = async (option) => {
+  //   try {
+  //     const findRequest = this.request.find(
+  //       (item) => item.option._id === option._id
+  //     );
+  //     if (findRequest) {
+  //       findRequest.option = option;
+  //     } else {
+  //       const newRequest = {
+  //         option: option,
+  //       };
+  //       this.items.push(newRequest);
+  //     }
+  //     console.log(newRequest);
+  //   } catch (error) {
+  //     // console.log("ShopStore -> fetchShops -> error", error);
+  //   }
+  // };
   addRequest = async (option) => {
     try {
-      const findRequest = this.request.find(
-        (item) => item.option._id === option._id
-      );
-      if (findRequest) {
-        findRequest.option = option;
-      } else {
-        const newRequest = {
-          option: option,
-        };
-        this.items.push(newRequest);
+      const formData = new FormData();
+      for (const key in option) {
+        // console.log(key)
+        formData.append(key, option[key]);
       }
-      console.log(newRequest);
+      const response = await instance.post("/request", formData);
+      this.items.push(response.data);
     } catch (error) {
-      // console.log("ShopStore -> fetchShops -> error", error);
+      console.log(error);
     }
   };
 

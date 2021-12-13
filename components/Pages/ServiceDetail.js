@@ -5,6 +5,7 @@ import { View, Box, AspectRatio, Center } from "native-base";
 
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
+import RequestUpdate from "./RequestUpdate";
 
 function ServiceDetail({ route }) {
   const { service } = route.params;
@@ -71,9 +72,7 @@ function ServiceDetail({ route }) {
       >
         <Text>Preferences</Text>
         <RequestList options={service.option}/>
-
-      >
-        <Text>Preferences</Text>
+<RequestUpdate option={service.option}/>
 
         {/* <RequestList options={service.options}/> */}
 
