@@ -62,5 +62,6 @@ class RequestStore {
 }
 
 const requestStore = new RequestStore();
+
 requestStore.fetchOption();
 export default requestStore;

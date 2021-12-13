@@ -10,7 +10,10 @@ import ProfileUpdate from "../user/ProfileUpdate";
 import { observer } from "mobx-react";
 import BookingForm from "../Pages/BookingForm";
 import ToDoList from "../Pages/ToDoList/ToDoList";
+import FormExample from "../Pages/FormExample";
+import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
+
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -82,6 +85,7 @@ const RootNavigator = () => {
           {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
         </>
       )}
+
 
     </Navigator>
   );
