@@ -2,6 +2,8 @@ import React from "react";
 import { Text } from "react-native";
 import { Button, HStack, VStack, Icon } from "native-base";
 import { observer } from "mobx-react";
+import NumericInput from "react-native-numeric-input";
+import RequestStore from "../../stores/RequestStore"
 import { useState } from "react";
 import { Fontisto } from "@expo/vector-icons";
 import DatePicker from "react-native-neat-date-picker";
@@ -20,6 +22,7 @@ const RequestItem = ({ option }) => {
     setShowDatePicker(true);
   };
 
+
   const onCancel = () => {
     // You should close the modal in here
     setShowDatePicker(false);
@@ -31,6 +34,11 @@ const RequestItem = ({ option }) => {
 
     // The parameter 'date' is a Date object so that you can use any Date prototype method.
     console.log(date.getDate());
+
+  const handleAdd = () => {
+    RequestStore.addRequest(option)
+    // setQuantity(value);
+
   };
 
   console.log(option);
