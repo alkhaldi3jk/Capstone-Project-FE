@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { Button, HStack } from "native-base";
 import { observer } from "mobx-react";
-import NumericInput from "react-native-numeric-input";
+// import NumericInput from "react-native-numeric-input";
 import serviceStore from "../../stores/serviceStore";
 import { useState } from "react";
 

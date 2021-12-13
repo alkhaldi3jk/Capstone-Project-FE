@@ -10,6 +10,7 @@ class RequestStore {
     // detail:{}
   ];
 
+
   fetchOption = async () => {
     try {
       const res = await instance.get("/options");
@@ -19,6 +20,7 @@ class RequestStore {
       console.log(error);
     }
   };
+
 
   addRequest = async (option) => {
     try {
@@ -63,5 +65,6 @@ class RequestStore {
 }
 
 const requestStore = new RequestStore();
+
 requestStore.fetchOption();
 export default requestStore;
