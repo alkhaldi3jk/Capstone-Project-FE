@@ -1,66 +1,19 @@
 import React from "react";
-
-// import { Image, Text } from "react-native";
-
-import serviceStore from "../../stores/serviceStore";
-import { observer } from "mobx-react";
-import {
-  View,
-  Image,
-  Text,
-  Box,
-  Heading,
-  AspectRatio,
-  Center,
-  HStack,
-  Stack,
-  NativeBaseProvider,
-  ScrollView,
-  VStack,
-  Button,
-  Spinner,
-} from "native-base";
+import { Image, Text } from "react-native";
+import { View, Box, AspectRatio, Center } from "native-base";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 
 function ServiceDetail({ route }) {
-  // if (serviceStore.isLoading) {
-  //   return <Spinner />;}
-
   const { service } = route.params;
 
   return (
     <View>
-      <Text> {service.name} </Text>
-      {/* <Image
+      <Image
         source={{ uri: service.image }}
-        style={{ width: "10", height: "10" }}
-      /> */}
+        style={{ width: 10, height: 10 }}
+      />
 
-      {/* <Text> {service.name} </Text>
-      <Box
-      maxW="100%"
-      rounded="sm"
-      overflow="visible"
-      borderColor="#faebd7"
-      marginLeft="0"
-      marginRight="0"
-      borderWidth="1"
-      _dark={{
-        borderColor: "coolGray.600",
-        backgroundColor: "gray.700",
-        backgroundSize:"cover"
-      }}
-      _web={{
-        shadow: 2,
-        borderWidth: 40,
-      }}
-      _light={{
-        backgroundColor: "gray.50",
-      }}
-      shadow={"3"}
-    >
-      </Box>   */}
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
           <Image source={{ uri: baseURL + service.image }} alt="image" />
@@ -70,12 +23,9 @@ function ServiceDetail({ route }) {
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
-
-            // fontFamily: "normal",
             height: "auto",
             width: "auto",
           }}
-          // position="center"
           bottom="0"
           px="3"
           py="1.5"
@@ -86,12 +36,10 @@ function ServiceDetail({ route }) {
       <Box
         bg="white"
         borderRadius="6"
-        // padding="3.5"
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        // fontSize="10"
-        fontFamily="normal"
+        fontSize="11px"
       >
         <Text>About This Service</Text>
       </Box>
@@ -101,15 +49,13 @@ function ServiceDetail({ route }) {
       <Box
         bg="white"
         borderRadius="6"
-        // padding="3.5"
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        fontSize="10"
-        fontFamily="normal"
       >
         <Text>Preferences</Text>
-        <RequestList/>
+
+        {/* <RequestList options={service.options}/> */}
       </Box>
     </View>
   );
