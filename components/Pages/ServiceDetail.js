@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Text } from "react-native";
+import { Image } from "react-native";
 import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
 import DatePicker from "react-native-neat-date-picker";
 import {
@@ -16,6 +16,8 @@ import {
   ScrollView,
   WarningOutlineIcon,
   Select,
+  HStack,
+  Text,
 } from "native-base";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
@@ -52,35 +54,23 @@ function ServiceDetail({ route, navigation }) {
   return (
     <ScrollView vertical={true}>
       <View>
-        <Text> {service.name} </Text>
-        <Image
-          source={{ uri: baseURL + service.image }}
-          style={{ width: 10, height: 10 }}
-        />
-
         <Box>
-          <AspectRatio w="auto" ratio={16 / 9}>
+          <AspectRatio w="auto" ratio={16 / 9} opacity="0.85">
             <Image source={{ uri: baseURL + service.image }} alt="image" />
           </AspectRatio>
-          <Center
-            _text={{
-              color: "#181616",
-              fontWeight: "600",
-              fontSize: "23px",
-              // fontFamily: "",
-              color: "gray.700",
-              fontStyle: "italic",
-              fontSize: "25px",
-              height: "auto",
-              width: "auto",
-            }}
-            // position="center"
+          <Heading
+            padding="5"
+            textAlign="left"
+            color="white"
+            fontWeight="400"
+            font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+            position="absolute"
             bottom="0"
             px="3"
             py="1.5"
           >
             {service.name}
-          </Center>
+          </Heading>
         </Box>
         <Center>
           <Box
@@ -93,32 +83,56 @@ function ServiceDetail({ route, navigation }) {
             fontFamily="normal"
             fontSize="11px"
           >
-            <Text
-              style={{
-                color: "#181616",
-                fontWeight: "600",
-                fontSize: "15px",
-                padding: 12,
-                // fontFamily: "",
-                color: "gray.700",
-                height: "auto",
-                width: "auto",
-              }}
+            <Heading
+              size="sm"
+              mt="2"
+              ml="-5"
+              px="6"
+              color="#474A4D"
+              fontStyle="italic"
+              padding="5"
+              textAlign="right"
+              font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+              letterSpacing="1"
             >
-              About This Service
-            </Text>
-            <Heading size="sm" mt="0.5" px="6" color="black">
               About This Service
             </Heading>
             <Text
+              textAlign="right"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
-              letterSpacing="2"
+              letterSpacing="0.5"
               px="6"
+              color="#5F6467"
             >
               Add some color to your home with fresh flowers from your go-to
               local florist or grocery store. Let us know what you like- or let
-              your Maia make it a surprise, delivered to your door. Pricing:
-              Flowers are curated based on your budget specified here.{" "}
+              your Maia make it a surprise, delivered to your door.
+            </Text>
+            <Text></Text>
+            <Button
+              mt="1"
+              mb="4"
+              ml="280"
+              borderRadius="8"
+              backgroundColor="#B8B3BE"
+              padding="2"
+              size="10"
+              width="20"
+              textAlign="center"
+              overflow="visible"
+              onPress={() => navigation.navigate("Pricing")}
+            >
+              Pricing
+            </Button>
+            <Text
+              textAlign="right"
+              font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+              letterSpacing="0.5"
+              color="#5F6467"
+              px="6"
+              mb="5"
+            >
+              Flowers are curated based on your budget.
             </Text>
           </Box>
           <Box>
@@ -132,45 +146,62 @@ function ServiceDetail({ route, navigation }) {
             onHoverIn="1.1"
             fontSize="10"
             fontFamily="normal"
+            width="390"
           >
             <Heading
-              // flex={1}
-              px="6"
               size="sm"
-              mt="0.5"
-              color="black"
-              isFullWidth="true"
+              mt="2"
+              ml="-5"
+              px="6"
+              color="#474A4D"
+              fontStyle="italic"
+              padding="5"
+              textAlign="right"
+              font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+              letterSpacing="1"
             >
               Preferences
             </Heading>
-            <Text>
-              What is your flower budget? What type, color, and size flowers
-              would you like? Do you want your flowers from a florist or from
-              the grocery store? Upload a photo to help us find flowers you
-              like.
+            <Text
+              textAlign="right"
+              font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+              letterSpacing="0.5"
+              px="6"
+              color="#5F6467"
+            >
+              What is your flower budget?
             </Text>
-            <Button onPress={() => navigation.navigate("Pricing")}>
-              <Text>pricing</Text>
-            </Button>
+            <Text
+              textAlign="right"
+              font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+              letterSpacing="0.5"
+              px="6"
+              color="#5F6467"
+            >
+              What type, color, and size flowers would you like? From a florist
+              or from the grocery store?
+            </Text>
+
             <Input
               variant="outline"
               top="3"
               px="6"
-              // alignItems="left"
               mb="10"
-              w="80"
-              h="90"
-              placeholder="e.g., I want a bouqet with mixed vibrant colors from a local florist."
+              w="300"
+              h="50"
+              ml="70"
+              placeholder="e.g., I want a bouquet with mixed vibrant colors from a local florist."
             />
             <FormControl isRequired isInvalid>
-              <FormControl.Label>Pick a day</FormControl.Label>
+              <FormControl.Label ml="290">Pick a day</FormControl.Label>
               <Button
                 leftIcon={<Icon as={Fontisto} name="date" size="sm" />}
                 color="#4f59b1"
                 mt="1"
-                backgroundColor="#4f59b1"
+                backgroundColor="#B8B3BE"
                 size="20"
                 title={"Pick a date"}
+                ml="290"
                 onPress={openDatePicker}
               />
               <DatePicker
@@ -209,13 +240,11 @@ function ServiceDetail({ route, navigation }) {
               alignItems="center"
               marginLeft="50"
               marginRight="50" // centers the button
+              marginBottom="40"
               onPress={() => navigation.navigate("Home")}
             >
               Request
             </Button>
-
-            <Text>Preferences</Text>
-
             <RequestList options={service.option} />
           </Box>
         </Center>
