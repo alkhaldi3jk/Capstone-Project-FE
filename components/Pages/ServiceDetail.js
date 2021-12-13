@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Image, Text, Button } from "react-native";
+import { Image, Text } from "react-native";
 import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
 import DatePicker from "react-native-neat-date-picker";
 import {
+  Button,
   View,
   Box,
   AspectRatio,
@@ -216,7 +217,6 @@ function ServiceDetail({ route, navigation }) {
             <Text>Preferences</Text>
 
             <RequestList options={service.option} />
-
           </Box>
         </Center>
       </View>
