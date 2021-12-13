@@ -24,7 +24,7 @@ class RequestStore {
 
   addRequest = async (option) => {
     try {
-      const findRequest = this.request.find(
+      const findRequest = this.items.find(
         (item) => item.option._id === option._id
       );
       if (findRequest) {
@@ -61,6 +61,8 @@ class RequestStore {
     } catch (error) {
       console.log(error);
     }
+
+
   };
 }
 

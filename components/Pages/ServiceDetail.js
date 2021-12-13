@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Image, Text } from "react-native";
-import { View, Box, AspectRatio, Center } from "native-base";
+import { Button, Image, Text } from "react-native";
+import { View, Box, AspectRatio, Center, Icon } from "native-base";
+import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
+import DatePicker from "react-native-neat-date-picker";
 
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
@@ -11,14 +13,12 @@ function ServiceDetail({ route }) {
 
   return (
     <View>
-
       <Text> {service.name} </Text>
 
       <Image
         source={{ uri: service.image }}
         style={{ width: 10, height: 10 }}
       />
-
 
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
@@ -47,12 +47,9 @@ function ServiceDetail({ route }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-
         // fontSize="10"
         fontFamily="normal"
-
         fontSize="11px"
-
       >
         <Text>About This Service</Text>
       </Box>
@@ -65,19 +62,11 @@ function ServiceDetail({ route }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-
         fontSize="10"
         fontFamily="normal"
       >
         <Text>Preferences</Text>
-        <RequestList options={service.option}/>
-
-      >
-        <Text>Preferences</Text>
-
-
-        <RequestList options={service.option}/>
-
+        <RequestList options={service.option} />
       </Box>
     </View>
   );
