@@ -10,7 +10,7 @@ class RequestStore {
     // detail:{}
   ];
 
-      ]
+
       
       addRequest = async (option) => {
         try {

@@ -38,7 +38,8 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
-            defaultValue={authStore.user?.profile.name}
+            value={authStore.user?.profile.name}
+            // isDisabled={true}
           />
           <FormControl.Label mt="5">Email ID</FormControl.Label>
           <Input
@@ -56,10 +57,11 @@ function ProfileUpdate() {
             defaultValue={authStore.user?.profile.email}
           />
 
+          <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
             p={2}
             mt="0.1"
-            placeholder="Update email.."
+            placeholder="Update Address.."
             placeholderTextColor="rgb(170, 170, 170)"
             bg="#F1F2F9"
             borderRadius="8"

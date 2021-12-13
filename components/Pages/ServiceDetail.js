@@ -1,9 +1,13 @@
 import React from "react";
-import { Image, Text } from "react-native";
+
+// import { Image, Text } from "react-native";
+
 import serviceStore from "../../stores/serviceStore";
 import { observer } from "mobx-react";
 import {
   View,
+  Image,
+  Text,
   Box,
   Heading,
   AspectRatio,
@@ -28,10 +32,10 @@ function ServiceDetail({ route  }) {
   return (
     <View>
       <Text> {service.name} </Text>
-      <Image
+      {/* <Image
         source={{ uri: service.image }}
         style={{ width: "10", height: "10" }}
-      />
+      /> */}
 
       {/* <Text> {service.name} </Text>
       <Box
@@ -60,17 +64,19 @@ function ServiceDetail({ route  }) {
       </Box>   */}
       <Box>
         <AspectRatio w="auto" ratio={16 / 9}>
-          <Image source={{ uri: baseURL+ service.image }} alt="image" />
+          <Image source={{ uri: baseURL + service.image }} alt="image" />
         </AspectRatio>
         <Center
           _text={{
             color: "#181616",
             fontWeight: "600",
             fontSize: "25px",
+
             // fontFamily: "normal",
             height: "auto",
             width: "auto",
           }}
+          // position="center"
           bottom="0"
           px="3"
           py="1.5"
@@ -85,8 +91,8 @@ function ServiceDetail({ route  }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        fontSize="11px"
-        // fontFamily="normal"
+        // fontSize="10"
+        fontFamily="normal"
       >
         <Text>About This Service</Text>
       </Box>
@@ -100,13 +106,11 @@ function ServiceDetail({ route  }) {
         alignment="center"
         fontSize="11"
         onHoverIn="1.1"
-        // fontSize="10px"
-        // fontFamily="normal"
+        fontSize="10"
+        fontFamily="normal"
       >
         <Text>Preferences</Text>
-
-        <RequestList options={service.options}/>
-
+        <RequestList options={service.option}/>
       </Box>
     </View>
   );
