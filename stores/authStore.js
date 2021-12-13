@@ -89,7 +89,9 @@ class AuthStore {
       console.log("hiii");
       const res = await instance.put(`/users`, formData);
       // REVIEW: Why is this function name missing?
-      this.user = res.data;
+      runInAction(() => {
+        this.user = res.data;
+      });
       this.isLoading = false;
     } catch (error) {
       console.log("Stores -> updateProfile -> error", error);

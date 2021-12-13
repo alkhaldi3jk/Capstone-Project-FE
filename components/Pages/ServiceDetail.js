@@ -16,7 +16,6 @@ import {
   Button,
   Spinner,
 } from "native-base";
-import { baseURL } from "../../stores/serviceStore";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 
@@ -28,14 +27,7 @@ function ServiceDetail({ route }) {
 
   return (
     <View>
-      <Text> {service.name} </Text>
-      <Image
-        source={{ uri: service.image }}
-        style={{ width: "10", height: "10" }}
-      />
-
-      {/* <Text> {service.name} </Text>
-      <Box
+      {/* <Box
       maxW="100%"
       rounded="sm"
       overflow="visible"
@@ -66,8 +58,10 @@ function ServiceDetail({ route }) {
           _text={{
             color: "#181616",
             fontWeight: "600",
-            fontSize: "25px",
-            // fontFamily: "normal",
+            fontSize: "23px",
+            // fontFamily: "",
+            color: "gray.700",
+            fontStyle: "italic",
             height: "auto",
             width: "auto",
           }}
@@ -88,7 +82,20 @@ function ServiceDetail({ route }) {
         fontSize="11px"
         // fontFamily="normal"
       >
-        <Text>About This Service</Text>
+        <Text
+          style={{
+            color: "#181616",
+            fontWeight: "600",
+            fontSize: "15px",
+            padding: 12,
+            // fontFamily: "",
+            color: "gray.700",
+            height: "auto",
+            width: "auto",
+          }}
+        >
+          About This Service
+        </Text>
       </Box>
       <Box>
         <Text>{service.description}</Text>
@@ -103,8 +110,21 @@ function ServiceDetail({ route }) {
         // fontSize="10px"
         // fontFamily="normal"
       >
-        <Text>Preferences</Text>
-        <RequestList/>
+        <Text
+          style={{
+            color: "#181616",
+            fontWeight: "600",
+            fontSize: "15px",
+            padding: 12,
+            // fontFamily: "",
+            color: "gray.700",
+            height: "auto",
+            width: "auto",
+          }}
+        >
+          Preferences
+        </Text>
+        <RequestList />
       </Box>
     </View>
   );
