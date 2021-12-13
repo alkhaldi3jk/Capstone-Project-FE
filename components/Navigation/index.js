@@ -17,6 +17,7 @@ const RootNavigator = () => {
 
   // initialRouteName="Home"
   return (
+
     <Navigator>
       {!authStore.user ? (
         <>
@@ -81,6 +82,7 @@ const RootNavigator = () => {
           {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
         </>
       )}
+
     </Navigator>
   );
 };

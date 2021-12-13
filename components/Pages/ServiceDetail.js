@@ -19,7 +19,7 @@ import {
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 
-function ServiceDetail({ route }) {
+function ServiceDetail({ route  }) {
   // if (serviceStore.isLoading) {
   //   return <Spinner />;}
 
@@ -39,6 +39,7 @@ function ServiceDetail({ route }) {
       rounded="sm"
       overflow="visible"
       borderColor="#faebd7"
+ 
       marginLeft="0"
       marginRight="0"
       borderWidth="1"
@@ -103,7 +104,9 @@ function ServiceDetail({ route }) {
         // fontFamily="normal"
       >
         <Text>Preferences</Text>
-        {/* <RequestList options={service.options}/> */}
+
+        <RequestList options={service.options}/>
+
       </Box>
     </View>
   );

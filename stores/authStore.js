@@ -93,7 +93,25 @@ class AuthStore {
       console.log("Stores -> updateProfile -> error", error);
     }
   };
+
+  // updateRequrst = async (updatedRequest) => {
+  //   try {
+  //     const formData = new FormData();
+  //     for (const key in updatedRequest) {
+  //       formData.append(key, updatedRequest[key]);
+  //     }
+  //     console.log("hiii");
+  //     const res = await instance.put(`/options`, formData);
+  //     // REVIEW: Why is this function name missing?
+  //     this.user = res.data;
+  //     this.isLoading = false;
+  //   } catch (error) {
+  //     console.log("Stores -> updateRequest -> error", error);
+  //   }
+  // };
 }
+
+
 const authStore = new AuthStore();
 authStore.checkForToken();
 export default authStore;
