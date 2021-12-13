@@ -21,7 +21,8 @@ const RootNavigator = () => {
   
   return (
 
-    <Navigator initialRouteName="Signin">
+
+    <Navigator initialRouteName="Home">
 
       {!authStore.user ? (
         <>
