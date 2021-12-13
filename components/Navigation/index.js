@@ -10,16 +10,22 @@ import ProfileUpdate from "../user/ProfileUpdate";
 import { observer } from "mobx-react";
 import BookingForm from "../Pages/BookingForm";
 import ToDoList from "../Pages/ToDoList/ToDoList";
+import FormExample from "../Pages/FormExample";
+import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
+import Pricing from "../Pages/Pricing";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
-  // initialRouteName="Home"
+  
   return (
-    <Navigator>
+
+    <Navigator initialRouteName="Signin">
+
       {!authStore.user ? (
         <>
+      
           <Screen
             name="Home"
             component={Home}
@@ -34,6 +40,7 @@ const RootNavigator = () => {
               headerShown: false,
             }}
           />
+
           <Screen
             name="Signup"
             component={Signup}
@@ -77,10 +84,15 @@ const RootNavigator = () => {
               headerShown: false,
             }}
           />
+          
+         
+
           {/* <Screen name="BookingForm" component={BookingForm} /> */}
           {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
         </>
       )}
+
+
     </Navigator>
   );
 };

@@ -10,27 +10,39 @@ class RequestStore {
     // detail:{}
   ];
 
-  addRequest = async (detail) => {
+
+  fetchOption = async () => {
     try {
-      const findRequest = this.request.find(
-        (item) => item.detail._id === detail._id
-      );
-      if (findRequest) {
-        findRequest.detail = detail;
-      } else {
-        const newRequest = {
-          detail: detail,
-        };
-        this.items.push(newRequest);
-      }
-      console.log(newRequest);
+      const res = await instance.get("/options");
+      this.items = res.data;
+      console.log(res.data)
     } catch (error) {
       console.log(error);
     }
   };
 
-  removeRequest = async (detailId) => {
-    this.items = this.items.filter((item) => item.detail._id !== detailId);
+
+  addRequest = async (option) => {
+    try {
+      const findRequest = this.request.find(
+        (item) => item.option._id === option._id
+      );
+      if (findRequest) {
+        findRequest.option = option;
+      } else {
+        const newRequest = {
+          option: option,
+        };
+        this.items.push(newRequest);
+      }
+      console.log(newRequest);
+    } catch (error) {
+      // console.log("ShopStore -> fetchShops -> error", error);
+    }
+  };
+
+  removeRequest = async (optionId) => {
+    this.items = this.items.filter((item) => item.option._id !== optionId);
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
 
@@ -38,7 +50,7 @@ class RequestStore {
     try {
       const cart = this.items.map((item) => ({
         ...item, //another soultion remove line 82 keep 84
-        detail: item.detail._id,
+        option: item.option._id,
       }));
       // console.log(cart); //check
       const res = await instance.post("/checkout", { items: cart });
@@ -52,6 +64,7 @@ class RequestStore {
   };
 }
 
-const serviceStore = new RequestStore();
+const requestStore = new RequestStore();
 
-export default serviceStore;
+requestStore.fetchOption();
+export default requestStore;
