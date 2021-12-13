@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { runInAction, makeAutoObservable } from "mobx";
 import decode from "jwt-decode";
 import { instance } from "../stores/instance";
 import React from "react";
@@ -13,7 +13,9 @@ class AuthStore {
 
   checkForToken = async () => {
     try {
-      this.user = null;
+      runInAction(() => {
+        this.user = null;
+      });
       const token = await AsyncStorage.getItem("myToken");
       if (token) {
         const currentTime = Date.now(); // give us the current time
@@ -30,8 +32,9 @@ class AuthStore {
   setUser = async (token) => {
     try {
       await AsyncStorage.setItem("myToken", token);
-      this.user = decode(token);
-      //   console.log(this.user);
+      runInAction(() => {
+        this.user = decode(token);
+      });
       instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     } catch (error) {}
   };
@@ -49,8 +52,10 @@ class AuthStore {
     try {
       delete instance.defaults.headers.common.Authorization;
       await AsyncStorage.removeItem("myToken");
-      this.user = null;
-      navigation.replace("Home");
+      runInAction(() => {
+        this.user = null;
+      });
+      navigation.navigate("Home");
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +65,7 @@ class AuthStore {
     try {
       const response = await instance.post("/signin", user);
       this.setUser(response.data.token);
-      navigation.replace("ServiceList");
+      navigation.navigate("ServiceList");
       // if (!this.user) {
       //   toast.show({
       //     title: "Welcome",
@@ -80,7 +85,6 @@ class AuthStore {
       for (const key in updatedProfile) {
         formData.append(key, updatedProfile[key]);
       }
-      console.log("hiii");
       const res = await instance.put(`/users`, formData);
       // REVIEW: Why is this function name missing?
       this.user = res.data;

@@ -21,8 +21,10 @@ function Signin({ navigation }) {
     password: "",
   });
 
-  const handleSubmit = async () => {
-    await authStore.signin(user, navigation);
+  // navigation.navigate("ServiceList")
+
+  const handleSubmit = () => {
+    authStore.signin(user, navigation);
   };
 
   return (
@@ -112,7 +114,7 @@ function Signin({ navigation }) {
             textAlign="center"
             overflow="visible"
             marginLeft="195"
-            onPress={handleSubmit,()=>{navigation.navigate("ServiceList")}}
+            onPress={handleSubmit}
           >
             Sign in
           </Button>

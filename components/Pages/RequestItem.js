@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { baseURL } from "../../Stores/instance";
 import { Button, HStack } from "native-base";
 import { observer } from "mobx-react";
 import NumericInput from "react-native-numeric-input";
@@ -14,6 +13,7 @@ const RequestItem = ({ option }) => {
     serviceStore.addRequest(option);
     // setQuantity(value);
   };
+
   console.log(option);
   return (
     <HStack w="100%" alignItems="center" space="3">
@@ -22,6 +22,7 @@ const RequestItem = ({ option }) => {
         style={{ width: 100, height: 100 }}
       /> */}
       <Text>{option.name}</Text>
+
       <NumericInput
         valueType="integer"
         totalHeight={30}

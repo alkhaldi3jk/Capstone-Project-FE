@@ -2,11 +2,13 @@ import { makeAutoObservable } from "mobx";
 import { instance } from "./instance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-class RequestStore{
-    constructor() {
-        makeAutoObservable(this);
-      }
-      items=[
+class RequestStore {
+  constructor() {
+    makeAutoObservable(this);
+  }
+  items = [
+    // detail:{}
+  ];
 
       ]
       
@@ -50,6 +52,9 @@ class RequestStore{
           console.log(error)
         }
       }
+
 }
 
-export default RequestStore
+const requestStore = new RequestStore();
+
+export default requestStore;
