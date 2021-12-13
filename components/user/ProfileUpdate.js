@@ -15,14 +15,17 @@ import authStore from "../../stores/authStore";
 function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
 
-  const handleUpdate = () => {
+  const handleSubmit = () => {
     authStore.updateProfile(update);
   };
+
+  // const handleUpdate=()=>{
+
+  //
 
   return (
     <View>
       <Heading>{authStore.user?.profile.name}</Heading>
-
       <FormControl>
         <Stack mx={5}>
           <FormControl.Label mt="100">Name</FormControl.Label>
@@ -39,23 +42,11 @@ function ProfileUpdate() {
               setUpdate({ ...update, name });
             }}
             value={authStore.user?.profile.name}
+
             // isDisabled={true}
+
           />
-          <FormControl.Label mt="5">Email ID</FormControl.Label>
-          <Input
-            p={2}
-            mt="0.1"
-            placeholder="Update email.."
-            placeholderTextColor="rgb(170, 170, 170)"
-            bg="#F1F2F9"
-            borderRadius="8"
-            borderWidth="2"
-            fontSize="14"
-            onChangeText={(email) => {
-              setUpdate({ ...update, email });
-            }}
-            defaultValue={authStore.user?.profile.email}
-          />
+
 
           <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
@@ -71,6 +62,7 @@ function ProfileUpdate() {
               setUpdate({ ...update, address });
             }}
             defaultValue={authStore.user?.profile.address}
+
           />
 
           <FormControl.Label mt="5">Age</FormControl.Label>
@@ -88,8 +80,7 @@ function ProfileUpdate() {
             }}
             defaultValue={authStore.user?.profile.age}
           />
-
-          <Button
+          {/* <Button
             mt="3"
             borderRadius="8"
             backgroundColor="#4f59b1"
@@ -102,6 +93,21 @@ function ProfileUpdate() {
             onPress={handleUpdate}
           >
             Update
+          </Button> */}
+
+          <Button
+            mt="3"
+            borderRadius="8"
+            backgroundColor="#4f59b1"
+            padding="2"
+            size="10"
+            width="20"
+            textAlign="center"
+            overflow="visible"
+            marginLeft="260"
+            onPress={handleSubmit}
+          >
+            Submit
           </Button>
         </Stack>
       </FormControl>
