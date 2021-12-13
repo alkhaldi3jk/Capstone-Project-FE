@@ -75,7 +75,8 @@ function ServiceDetail({ route }) {
       >
         <Text>Preferences</Text>
 
-        {/* <RequestList options={service.options}/> */}
+
+        <RequestList options={service.option}/>
 
       </Box>
     </View>
