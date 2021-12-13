@@ -88,7 +88,7 @@ function CustomDrawerContent(props) {
         // alignItems="left"
         // size={50}
         name="Ghadah Budhhair"
-      /> */}   
+      /> */}
       <IconButton
         icon={<Icon as={Entypo} name="emoji-happy" />}
         borderRadius="full"
@@ -222,10 +222,22 @@ function CustomDrawerContent(props) {
             </VStack> */}
           {/* </VStack> */}
           {/* <DrawerContentScrollView {...props}> */}
-          <DrawerItem
-            label="logout"
+
+          <Button
+            mt="1"
+            borderRadius="8"
+            backgroundColor="#4f59b1"
+            padding="2"
+            size="10"
+            width="20"
+            textAlign="center"
+            overflow="visible"
+            marginLeft="180"
+            label="Sign Out"
             onPress={() => authStore.signOut(props.navigation)}
-          />
+          >
+            Sign out
+          </Button>
           {/* </DrawerContentScrollView> */}
         </VStack>
       </VStack>

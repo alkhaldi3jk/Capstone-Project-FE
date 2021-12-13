@@ -1,6 +1,5 @@
 import React from "react";
 import { Image, Text } from "react-native";
-
 import { 
 View, 
 Box, 
@@ -53,10 +52,29 @@ function ServiceDetail({ route, navigation }) {
   return (
     <ScrollView vertical={true}>
     <View>
-
-    
-
-
+      {/* <Box
+      maxW="100%"
+      rounded="sm"
+      overflow="visible"
+      borderColor="#faebd7"
+      marginLeft="0"
+      marginRight="0"
+      borderWidth="1"
+      _dark={{
+        borderColor: "coolGray.600",
+        backgroundColor: "gray.700",
+        backgroundSize:"cover"
+      }}
+      _web={{
+        shadow: 2,
+        borderWidth: 40,
+      }}
+      _light={{
+        backgroundColor: "gray.50",
+      }}
+      shadow={"3"}
+    >
+      </Box>   */}
       <Text> {service.name} </Text>
 
 
@@ -73,8 +91,11 @@ function ServiceDetail({ route, navigation }) {
           _text={{
             color: "#181616",
             fontWeight: "600",
+            fontSize: "23px",
+            // fontFamily: "",
+            color: "gray.700",
+            fontStyle: "italic",
             fontSize: "25px",
-
             height: "auto",
             width: "auto",
           }}
@@ -100,6 +121,20 @@ function ServiceDetail({ route, navigation }) {
         fontSize="11px"
 
       >
+        <Text
+          style={{
+            color: "#181616",
+            fontWeight: "600",
+            fontSize: "15px",
+            padding: 12,
+            // fontFamily: "",
+            color: "gray.700",
+            height: "auto",
+            width: "auto",
+          }}
+        >
+          About This Service
+        </Text>
         <Heading
         size="sm"
         mt="0.5"
@@ -210,6 +245,22 @@ onPress={() => navigation.navigate("Pricing")}
         <RequestList options={service.option}/>
 
       >
+        <Text
+          style={{
+            color: "#181616",
+            fontWeight: "600",
+            fontSize: "15px",
+            padding: 12,
+            // fontFamily: "",
+            color: "gray.700",
+            height: "auto",
+            width: "auto",
+          }}
+        >
+          Preferences
+        </Text>
+        <RequestList />
+
         <Text>Preferences</Text>
 
 

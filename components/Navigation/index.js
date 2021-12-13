@@ -15,7 +15,6 @@ import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
 import Pricing from "../Pages/Pricing";
 
-
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 

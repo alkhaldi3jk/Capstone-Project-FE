@@ -50,8 +50,7 @@ function Home({ route, navigation }) {
             letterSpacing="0"
             textAlign="center"
             line-height="25"
-
-            // fontFamily="Epilogue-seminold"
+            fontFamily="Epilogue-seminold"
           >
             Welcome home, we're Maia.
           </Heading>
@@ -67,7 +66,7 @@ function Home({ route, navigation }) {
             mx="6"
             letterSpacing="0"
             lineHeight="22"
-            // fontFamily="Epilogue"
+            fontFamily="Epilogue"
           >
             The first app-based personal assistant designed for the future of
             living.

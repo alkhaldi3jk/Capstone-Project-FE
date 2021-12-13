@@ -27,7 +27,7 @@ const ServiceList = ({ navigation }) => {
   return (
     <ScrollView vertical={true}>
       <Center>
-        <HStack space="2.5" mt="79" maxW="100%" ratio={16 / 9}>
+        <HStack space="2.5" mt="4" maxW="100%" ratio={16 / 9}>
           <Stack
             maxW="100%"
             direction="column"
