@@ -11,16 +11,22 @@ import ProfileUpdate from "../user/ProfileUpdate";
 import { observer } from "mobx-react";
 import BookingForm from "../Pages/BookingForm";
 import ToDoList from "../Pages/ToDoList/ToDoList";
+import FormExample from "../Pages/FormExample";
+import UserAppointment from "../user/UserAppointment";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
 
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="ServiceDetail">
 
 
       <Screen name="ToDoList" component={ToDoList} />
+
+      <Screen name="UserAppointment" component={UserAppointment} />
+      
+      <Screen name="FormExample" component={FormExample}/>
 
       <Screen
         name="Signin"

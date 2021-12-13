@@ -17,6 +17,7 @@ import {
   View,
   Box,
   ScrollView,
+  
 } from "native-base";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
@@ -91,6 +92,8 @@ function Home({ route, navigation }) {
           <Button
             leftIcon={<Icon as={Feather} name="user" size="sm" />}
             bg="white"
+            // TouchableHighlight="#4f59b1"
+            activeOpacity="#4f59b1"
             borderRadius="6"
             // padding="3.5"
             alignment="center"
@@ -107,7 +110,7 @@ function Home({ route, navigation }) {
             alignItems="center"
             marginLeft="50"
             marginRight="50" // centers the button
-            onPress={() => navigation.navigate("Signin")}
+            onPress={() => navigation.navigate("Signin")} 
           >
             Sign in
           </Button>
