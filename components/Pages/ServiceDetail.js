@@ -16,6 +16,7 @@ WarningOutlineIcon,
 Select } from "native-base";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
+
 import { useState } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, Feather, FontAwesome5, Fontisto } from "@expo/vector-icons";
@@ -244,6 +245,7 @@ onPress={() => navigation.navigate("Pricing")}
         <Text>Preferences</Text>
         <RequestList options={service.option}/>
 
+
       >
         <Text
           style={{
@@ -262,6 +264,7 @@ onPress={() => navigation.navigate("Pricing")}
         <RequestList />
 
         <Text>Preferences</Text>
+
 
 
         <RequestList options={service.option}/>
