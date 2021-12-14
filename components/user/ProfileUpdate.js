@@ -107,6 +107,7 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
+
             // value={authStore.user?.profile.name}
             // isDisabled={true}
           />
@@ -124,6 +125,7 @@ function ProfileUpdate() {
               setUpdate({ ...update, email });
             }}
           /> */}
+
           <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
             p={2}
@@ -154,20 +156,7 @@ function ProfileUpdate() {
             }}
             defaultValue={authStore.user?.profile.age}
           />
-          {/* <Button
-            mt="3"
-            borderRadius="8"
-            backgroundColor="#4f59b1"
-            padding="2"
-            size="10"
-            width="20"
-            textAlign="center"
-            overflow="visible"
-            marginLeft="260"
-            onPress={handleUpdate}
-          >
-            Update
-          </Button> */}
+  
 
           <Button
             mt="9"
