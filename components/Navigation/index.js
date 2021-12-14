@@ -18,15 +18,10 @@ import Pricing from "../Pages/Pricing";
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
-  
   return (
-
-
     <Navigator initialRouteName="Home">
-
       {!authStore.user ? (
         <>
-      
           <Screen
             name="Home"
             component={Home}
@@ -85,15 +80,11 @@ const RootNavigator = () => {
               headerShown: false,
             }}
           />
-          
-         
 
           {/* <Screen name="BookingForm" component={BookingForm} /> */}
           {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}
         </>
       )}
-
-
     </Navigator>
   );
 };
