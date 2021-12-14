@@ -22,6 +22,7 @@ import {
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 import RequestUpdate from "./RequestUpdate";
+
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
     headerColor: "#4F59B1",
@@ -104,9 +105,7 @@ function ServiceDetail({ route, navigation }) {
               px="6"
               color="#5F6467"
             >
-              Add some color to your home with fresh flowers from your go-to
-              local florist or grocery store. Let us know what you like- or let
-              your Maia make it a surprise, delivered to your door.
+              {service.about}
             </Text>
             <Text></Text>
             <Button
@@ -132,7 +131,7 @@ function ServiceDetail({ route, navigation }) {
               px="6"
               mb="5"
             >
-              Flowers are curated based on your budget.
+              Requests are curated based on your budget.
             </Text>
           </Box>
           <Box>
@@ -169,7 +168,7 @@ function ServiceDetail({ route, navigation }) {
               px="6"
               color="#5F6467"
             >
-              What is your flower budget?
+              {service.preferences1}
             </Text>
             <Text
               textAlign="right"
@@ -178,8 +177,7 @@ function ServiceDetail({ route, navigation }) {
               px="6"
               color="#5F6467"
             >
-              What type, color, and size flowers would you like? From a florist
-              or from the grocery store?
+              {service.preferences2}
             </Text>
 
             <Input
