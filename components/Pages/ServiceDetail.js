@@ -19,15 +19,9 @@ import {
   HStack,
   Text,
 } from "native-base";
-
-
-import React from "react";
-
-import { Image } from "react-native";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 import RequestUpdate from "./RequestUpdate";
-
 
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
@@ -257,7 +251,6 @@ function ServiceDetail({ route, navigation }) {
         </Center>
       </View>
     </ScrollView>
-
   );
 }
 
