@@ -19,11 +19,9 @@ import {
   HStack,
   Text,
 } from "native-base";
-
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 import RequestUpdate from "./RequestUpdate";
-
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
     headerColor: "#4F59B1",
