@@ -1,14 +1,12 @@
 
 import React from "react";
-
 import { Image, Text } from "react-native";
-import { View, Box, AspectRatio, Center } from "native-base";
-
+import {FontAwesome5  , FormControl ,Fontisto,Icon , View, Box, AspectRatio, Center, ScrollView, Heading, Button,Input } from "native-base";
+import { useState } from "react";
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 import RequestUpdate from "./RequestUpdate";
-
-
+import DatePicker from "react-native-neat-date-picker";
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
     headerColor: "#4F59B1",
