@@ -250,7 +250,6 @@ function ServiceDetail({ route, navigation }) {
         </Center>
       </View>
     </ScrollView>
-
   );
 }
 

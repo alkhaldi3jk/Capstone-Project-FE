@@ -41,12 +41,9 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
-            value={authStore.user?.profile.name}
-
+            defaultValue={authStore.user?.profile.name}
             // isDisabled={true}
-
           />
-
 
           <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
@@ -62,7 +59,6 @@ function ProfileUpdate() {
               setUpdate({ ...update, address });
             }}
             defaultValue={authStore.user?.profile.address}
-
           />
 
           <FormControl.Label mt="5">Age</FormControl.Label>
@@ -80,21 +76,6 @@ function ProfileUpdate() {
             }}
             defaultValue={authStore.user?.profile.age}
           />
-          {/* <Button
-            mt="3"
-            borderRadius="8"
-            backgroundColor="#4f59b1"
-            padding="2"
-            size="10"
-            width="20"
-            textAlign="center"
-            overflow="visible"
-            marginLeft="260"
-            onPress={handleUpdate}
-          >
-            Update
-          </Button> */}
-
           <Button
             mt="3"
             borderRadius="8"
@@ -107,8 +88,23 @@ function ProfileUpdate() {
             marginLeft="260"
             onPress={handleSubmit}
           >
-            Submit
+            Update
           </Button>
+
+          {/* <Button
+            mt="3"
+            borderRadius="8"
+            backgroundColor="#4f59b1"
+            padding="2"
+            size="10"
+            width="20"
+            textAlign="center"
+            overflow="visible"
+            marginLeft="260"
+            onPress={handleSubmit}
+          >
+            Submit
+          </Button> */}
         </Stack>
       </FormControl>
     </View>
