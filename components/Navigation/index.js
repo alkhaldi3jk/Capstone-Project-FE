@@ -20,7 +20,7 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="ProfileUpdate">
+    <Navigator initialRouteName="AboutUs">
       {/* <Screen
             name="UserItem"
             component={UserItem}
