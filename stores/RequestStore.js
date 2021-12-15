@@ -74,6 +74,12 @@ class RequestStore {
       console.log(error);
     }
   };
+
+  get totalQuantity() {
+    let total = 0;
+    this.items.forEach((item) => (total = total + item.quantity));
+    return total;
+  }
 }
 
 const requestStore = new RequestStore();

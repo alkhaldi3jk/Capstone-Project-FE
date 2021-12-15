@@ -17,6 +17,8 @@ import {
   MaterialIcons,
   Entypo,
   FontAwesome5,
+  Clarity,
+  Feather,
 } from "@expo/vector-icons";
 import {
   NativeBaseProvider,
@@ -39,6 +41,8 @@ import Pending from "./Pending";
 import Past from "./Past";
 import ServiceList from "./ServiceList";
 import ServiceNav from "../Navigation/ServiceNav";
+import CheckoutButton from "../user/CheckoutButton";
+import CheckoutList from "../user/CheckoutList";
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
   return (
@@ -72,6 +76,8 @@ const getIcon = (screenName) => {
       return "progress-clock";
     case "Past Requests":
       return "progress-close";
+    case "Checkout":
+      return "cart";
     default:
       return undefined;
   }
@@ -82,34 +88,13 @@ function CustomDrawerContent(props) {
 
   return (
     <DrawerContentScrollView {...props} safeArea>
-      {/* <UserAvatar
-        // px="3"
-        // size="sm"
-        // alignItems="left"
-        // size={50}
-        name="Ghadah Budhhair"
-      /> */}
       <IconButton
-        icon={<Icon as={Entypo} name="emoji-happy" />}
+        icon={<Icon as={Feather} name="bell" />}
         borderRadius="full"
         _icon={{
-          color: "violet.500",
-          bg: "#F1F2F9",
-          size: "md",
-        }}
-        _hover={{
-          bg: "orange.600:alpha.20",
-        }}
-        _pressed={{
-          bg: "orange.600:alpha.20",
-          _icon: {
-            name: "emoji-flirt",
-          },
-          _ios: {
-            _icon: {
-              size: "2xl",
-            },
-          },
+          color: "#4f59b1",
+          bg: "white",
+          size: "sm",
         }}
         _ios={{
           _icon: {
@@ -117,7 +102,6 @@ function CustomDrawerContent(props) {
           },
         }}
       />
-
       <VStack space="6" my="2" mx="1">
         <Box px="4">
           <Text bold color="gray.700">
@@ -145,13 +129,13 @@ function CustomDrawerContent(props) {
               >
                 <HStack space="7" alignItems="center">
                   <Icon
-                    color={index === props.state.index ? "violet.700" : "black"}
+                    color={index === props.state.index ? "#4f59b1" : "black"}
                     size="5"
                     as={<MaterialCommunityIcons name={getIcon(name)} />}
                   />
                   <Text
                     fontWeight="500"
-                    color={index === props.state.index ? "violet.700" : "black"}
+                    color={index === props.state.index ? "#4f59b1" : "black"}
                   >
                     {name}
                   </Text>
@@ -264,6 +248,7 @@ function MyDrawer() {
         <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
         <Drawer.Screen name="Pending Requests" component={Pending} />
         <Drawer.Screen name="Past Requests" component={Past} />
+        <Drawer.Screen name="Checkout" component={CheckoutList} />
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
       </Drawer.Navigator>
     </Box>
