@@ -36,14 +36,12 @@ import {
   Icon,
 } from "native-base";
 import ProfileUpdate from "../user/ProfileUpdate";
-import Upcoming from "../Pages/Upcoming";
-import Pending from "./Pending";
-import Past from "./Past";
 import ServiceList from "./ServiceList";
 import ServiceNav from "../Navigation/ServiceNav";
 import ToDoList from "./ToDoList/ToDoList";
 import CheckoutButton from "../user/CheckoutButton";
 import CheckoutList from "../user/CheckoutList";
+import UserAppointment from "../user/UserAppointment";
 
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
@@ -72,18 +70,10 @@ const getIcon = (screenName) => {
       return "alert-circle";
     case "logout":
       return "logout";
-    case "My To-Do's":
-      return "progress-check";
     case "Upcoming Requests":
       return "progress-clock";
-
-   
-
-    case "Past Requests":
-      return "progress-close";
     case "Checkout":
       return "cart";
-
     default:
       return undefined;
   }
@@ -95,22 +85,6 @@ function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props} safeArea>
 
-     
-
-
-      <IconButton
-        icon={<Icon as={Feather} name="bell" />}
-        borderRadius="full"
-        _icon={{
-          color: "#4f59b1",
-          bg: "white",
-          size: "sm",
-        }}
-        _ios={{
-          _icon: {
-            size: "2xl",
-          },
-        }}
 
       <VStack space="6" my="2" mx="1">
         <Box px="4">
@@ -153,70 +127,6 @@ function CustomDrawerContent(props) {
               </Pressable>
             ))}
           </VStack>
-          {/* divider */}
-          {/* <VStack space="5">
-            <Text fontWeight="500" fontSize="14" px="5" color="gray.500">
-              My Requests
-            </Text>
-            <VStack space="3">
-              <Pressable px="5" py="3">
-                <HStack space="7" alignItems="center">
-                  <Icon
-                    color="green.500"
-                    size="5"
-                    as={<MaterialCommunityIcons name="progress-check" />}
-                  />
-                  <Text
-                    color="gray.700"
-                    fontWeight="500"
-                    onPress={(event) => {
-                      props.navigation.navigate("Upcoming");
-                    }}
-                  >
-                    Upcoming Requests
-                  </Text>
-                </HStack>
-              </Pressable>
-              <Pressable px="5" py="2">
-                <HStack space="7" alignItems="center">
-                  <Icon
-                    color="yellow.500"
-                    size="5"
-                    as={<MaterialCommunityIcons name="progress-clock" />}
-                  />
-                  <Text
-                    color="gray.700"
-                    fontWeight="500"
-                    onPress={(event) => {
-                      props.navigation.navigate("Pending");
-                    }}
-                  >
-                    Pending Requests
-                  </Text>
-                </HStack>
-              </Pressable>
-              <Pressable px="5" py="3">
-                <HStack space="7" alignItems="center">
-                  <Icon
-                    color="gray.500"
-                    size="5"
-                    as={<MaterialCommunityIcons name="progress-close" />}
-                  />
-                  <Text
-                    fontWeight="500"
-                    color="gray.700"
-                    onPress={(event) => {
-                      props.navigation.navigate("Past");
-                    }}
-                  >
-                    Past Requests
-                  </Text>
-                </HStack>
-              </Pressable>
-            </VStack> */}
-          {/* </VStack> */}
-          {/* <DrawerContentScrollView {...props}> */}
-
           <Button
             mt="1"
             borderRadius="8"
@@ -255,12 +165,12 @@ function MyDrawer() {
         {/* <Drawer.Screen name="Home" component={Home} /> */}
         <Drawer.Screen name="Services & Requests" component={ServiceNav} />
         <Drawer.Screen name="My Profile" component={ProfileUpdate} />
-        <Drawer.Screen name="Upcoming Requests" component={Pending} />
+        <Drawer.Screen name="Upcoming Requests" component={UserAppointment} />
         <Drawer.Screen name="My To-Do's" component={ToDoList} />
         {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
-        <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
-        <Drawer.Screen name="Pending Requests" component={Pending} />
-        <Drawer.Screen name="Past Requests" component={Past} />
+        {/* <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
+        <Drawer.Screen name="Pending Requests" component={Pending} /> */}
+        {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
         <Drawer.Screen name="Checkout" component={CheckoutList} />
 
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
