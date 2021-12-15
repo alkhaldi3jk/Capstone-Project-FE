@@ -222,10 +222,11 @@ function ServiceDetail({ route, navigation }) {
             </FormControl>
 
             <Button
+            _pressed={{ bg: "white"}} 
               leftIcon={
                 <Icon as={FontAwesome5} name="concierge-bell" size="sm" />
               }
-              bg="white"
+              bg="#4f59b1"
               // TouchableHighlight="#4f59b1"
               activeOpacity="#4f59b1"
               color="#4f59b1"

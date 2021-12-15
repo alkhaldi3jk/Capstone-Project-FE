@@ -4,25 +4,28 @@ import {
   Image,
   Heading,
   Center,
+  Box,
   NativeBaseProvider,
 } from "native-base";
 import image from "../../assets/undraw_meet_the_team_re_4h08.svg";
 import { Text } from "react-native";
+import AnimatedLottieView from "lottie-react-native";
 
 export const AboutUs = () => {
   return (
     <View>
-     <Image
-          source={{
-            uri: "https://images.unsplash.com/photo-1601132359864-c974e79890ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
-          }}
-          alt="image"
-          width="390"
-          height="486"
-          // overflow="visible"
-          />
+      <Box safeArea p="2" py="8" w="90%" maxW="290">
+      <AnimatedLottieView
+        source={require("../../assets/aboutus3.json")}
+        loop
+        width="200%"
+        height="200%"
+        // marginTop="8%"
+        marginRight="50%"
+        // marginLeft="20%"
+        autoPlay/>
           <Center>
-      <Text
+      <Heading
       pt="3" 
       mt="400"
       width="326"
@@ -37,16 +40,14 @@ export const AboutUs = () => {
       mx="2"
       letterSpacing="0"
       lineHeight="20"
-      // fontFamily="Epilogue"
-      
-  // fontStyle= "normal"
-  // fontFamily= "Epilogue"
-  >Maia is your personal butler. Whatever you need done, Maia can help. </Text>
+    
+  >It’s About Time. </Heading>
   <Text
   width="219"
   height="45"
-  fontWeight="800">  We provide personalized services that help save you time  so you can do more of  the things  that matter most.</Text>
+  fontWeight="800">Time is our most precious, non-renewable resource. By helping people to handle the weekly tasks and to-dos, we are giving them the time and headspace to be their greatest selves.</Text>
   </Center>
+  </Box>
     </View>
   );
 };
