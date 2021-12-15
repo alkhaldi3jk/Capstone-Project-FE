@@ -8,12 +8,13 @@ import Home from "../Pages/home";
 import Drawer from "../Pages/Drawers";
 import ProfileUpdate from "../user/ProfileUpdate";
 import { observer } from "mobx-react";
-import BookingForm from "../Pages/BookingForm";
 import ToDoList from "../Pages/ToDoList/ToDoList";
 import FormExample from "../Pages/FormExample";
 import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
 import Pricing from "../Pages/Pricing";
+import AboutUs from "../Pages/AboutUs";
+
 
 import CheckoutList from "../user/CheckoutList";
 // import UserItem from "../user/UserItem"
@@ -24,19 +25,11 @@ const RootNavigator = () => {
   // initialRouteName="Home"
   return (
 
+    <Navigator initialRouteName="ToDoList">
 
-    <Navigator initialRouteName="Home">
-
-      {/* <Screen
-            name="UserItem"
-            component={UserItem}
-            options={{
-              headerShown: false,
-            }}
-          /> */}
+     
       {!authStore.user ? (
         <>
-
           <Screen
             name="Home"
             component={Home}
@@ -96,6 +89,13 @@ const RootNavigator = () => {
               headerShown: false,
             }}
           />
+
+          <Screen
+            name="ToDoList"
+            component={ToDoList}
+            options={{
+              headerShown: false,
+            }} />
 
           {/* <Screen name="BookingForm" component={BookingForm} /> */}
           {/* <Screen name="MyDatePicker" component={MyDatePicker} /> */}

@@ -13,6 +13,7 @@ import {
 } from "native-base";
 import React, { useState } from "react";
 import authStore from "../../stores/authStore";
+import AnimatedLottieView from "lottie-react-native";
 
 function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
@@ -37,15 +38,10 @@ function ProfileUpdate() {
       >
         My Profile
       </Text>
-      <Image
-        source={require("../../assets/maia_logo_blueish.png")}
-        alt="Maia Logo"
-        size="120"
-        mt="1"
-        // mb="158"
-        ml="13"
-        // mr="-10"
-      />
+      <AnimatedLottieView
+        source={require("../../assets/logo-withoutbg.json")}
+        loop
+        autoPlay/>
       <Heading
         mt="5"
         mb="1"

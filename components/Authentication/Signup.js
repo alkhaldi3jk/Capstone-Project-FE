@@ -1,6 +1,7 @@
 import React from "react";
 import authStore from "../../stores/authStore";
 import { useState } from "react";
+import AnimatedLottieView from "lottie-react-native";
 
 import {
   Box,
@@ -35,8 +36,10 @@ function Signup({ navigation }) {
   return (
     <Center>
       <Box safeArea p="2" py="62" w="90%" maxW="290">
-        <Image
-          source={require("../../assets/maia_logo_blueish.png")}
+        <AnimatedLottieView
+          source={require("../../assets/logo-withoutbg.json")}
+          loop
+        autoPlay
           alt="Maia Logo"
           size="117"
           mt="20"
@@ -44,6 +47,10 @@ function Signup({ navigation }) {
           ml="20"
           mr="-10"
         />
+        {/* <AnimatedLottieView
+        source={require("../../assets/logo-withoutbg.json")}
+        loop
+        autoPlay/> */}
         <Heading
           size="lg"
           fontWeight="600"

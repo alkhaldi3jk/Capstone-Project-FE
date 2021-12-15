@@ -39,6 +39,7 @@ import Pending from "./Pending";
 import Past from "./Past";
 import ServiceList from "./ServiceList";
 import ServiceNav from "../Navigation/ServiceNav";
+import ToDoList from "./ToDoList/ToDoList";
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
   return (
@@ -66,12 +67,11 @@ const getIcon = (screenName) => {
       return "alert-circle";
     case "logout":
       return "logout";
-    case "Upcoming Requests":
+    case "My To-Do's":
       return "progress-check";
-    case "Pending Requests":
+    case "Upcoming Requests":
       return "progress-clock";
-    case "Past Requests":
-      return "progress-close";
+   
     default:
       return undefined;
   }
@@ -82,41 +82,7 @@ function CustomDrawerContent(props) {
 
   return (
     <DrawerContentScrollView {...props} safeArea>
-      {/* <UserAvatar
-        // px="3"
-        // size="sm"
-        // alignItems="left"
-        // size={50}
-        name="Ghadah Budhhair"
-      /> */}
-      <IconButton
-        icon={<Icon as={Entypo} name="emoji-happy" />}
-        borderRadius="full"
-        _icon={{
-          color: "violet.500",
-          bg: "#F1F2F9",
-          size: "md",
-        }}
-        _hover={{
-          bg: "orange.600:alpha.20",
-        }}
-        _pressed={{
-          bg: "orange.600:alpha.20",
-          _icon: {
-            name: "emoji-flirt",
-          },
-          _ios: {
-            _icon: {
-              size: "2xl",
-            },
-          },
-        }}
-        _ios={{
-          _icon: {
-            size: "2xl",
-          },
-        }}
-      />
+     
 
       <VStack space="6" my="2" mx="1">
         <Box px="4">
@@ -261,9 +227,9 @@ function MyDrawer() {
         {/* <Drawer.Screen name="Home" component={Home} /> */}
         <Drawer.Screen name="Services & Requests" component={ServiceNav} />
         <Drawer.Screen name="My Profile" component={ProfileUpdate} />
-        <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
-        <Drawer.Screen name="Pending Requests" component={Pending} />
-        <Drawer.Screen name="Past Requests" component={Past} />
+        <Drawer.Screen name="Upcoming Requests" component={Pending} />
+        <Drawer.Screen name="My To-Do's" component={ToDoList} />
+        {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
       </Drawer.Navigator>
     </Box>
