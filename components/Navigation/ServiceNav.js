@@ -11,14 +11,14 @@ const ServiceNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="UserList">
-      <Screen
+    <Navigator initialRouteName="Home">
+      {/* <Screen
             name="UserList"
             component={UserList}
             options={{
               headerShown: false,
             }}
-          />
+          /> */}
       <Screen
         name="ServiceList"
         component={ServiceList}

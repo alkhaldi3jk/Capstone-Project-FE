@@ -1,15 +1,15 @@
-
 import React from "react";
 import userStore from "../../stores/userStore";
 import UserItem from "./UserItem";
 import { observer } from "mobx-react-lite";
+import { View } from "react-native";
+
 function UserList() {
   const userList = userStore.users.map((user) => (
-      <UserItem user={user} key={user._id} />
+    <UserItem user={user._id} key={user._id} />
   ));
 
+  return <View>{userList}</View>;
+}
 
-//   return <div>{userList}</div>;
-// }
-
-// export default observer(UserList);
+export default observer(UserList);
