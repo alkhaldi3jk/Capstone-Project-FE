@@ -17,17 +17,28 @@ import AboutUs from "../Pages/AboutUs";
 
 
 import CheckoutList from "../user/CheckoutList";
+import CheckoutButton from "../user/CheckoutButton";
 // import UserItem from "../user/UserItem"
-
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
   // initialRouteName="Home"
   return (
 
+
     <Navigator initialRouteName="ToDoList">
 
      
+
+    <Navigator initialRouteName="Home">
+      {/* <Screen
+            name="UserItem"
+            component={UserItem}
+            options={{
+              headerShown: false,
+            }}
+          /> */}
+
       {!authStore.user ? (
         <>
           <Screen
@@ -60,7 +71,13 @@ const RootNavigator = () => {
             component={Drawer}
             options={{
               headerShown: false,
-              
+            }}
+          />
+          <Screen
+            name="Cart"
+            component={CheckoutButton}
+            options={{
+              headerShown: false,
             }}
           />
           <Screen

@@ -17,9 +17,10 @@ import AnimatedLottieView from "lottie-react-native";
 
 function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
-  const [disable, setDisable] = useState(
-    
-  );
+  const [disable, setDisable] = useState();
+
+
+
 
   const handleSubmit = () => {
     authStore.updateProfile(update);
@@ -27,6 +28,7 @@ function ProfileUpdate() {
 
   return (
     <View>
+      <Text>{console.log(authStore.user.requests)}</Text>
       <Text
         mt="5"
         px="7"
@@ -53,15 +55,6 @@ function ProfileUpdate() {
       >
         {authStore.user?.profile.name}
       </Heading>
-      {/* <Text
-        textAlign="right"
-        font-family="lucida grande', tahoma, verdana, arial, sans-serif"
-        letterSpacing="0.5"
-        px="6"
-        color="#5F6467"
-      >
-        {authStore.user?.profile.email}
-      </Text> */}
       <Text
         textAlign="left"
         font-family="lucida grande', tahoma, verdana, arial, sans-serif"
@@ -106,30 +99,13 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
-            value={authStore.user?.profile.name}
-
-            // isDisabled={true}
+            // value={authStore.user?.profile.name}
           />
-          {/* <FormControl.Label mt="5">Email:</FormControl.Label>
-          <Input
-            p={2}
-            mt="0.1"
-            placeholder={authStore.user?.email}
-            placeholderTextColor="rgb(170, 170, 170)"
-            bg="#F1F2F9"
-            borderRadius="8"
-            borderWidth="2"
-            fontSize="14"
-            onChangeText={(email) => {
-              setUpdate({ ...update, email });
-            }}
-          /> */}
-
           <FormControl.Label mt="5">Address</FormControl.Label>
           <Input
             p={2}
             mt="0.1"
-            placeholder="E.g. Yarmouk, block 2, street 1, house 22"
+            placeholder="E.g. Yarmouk, block 5, street 12, house 20"
             placeholderTextColor="rgb(170, 170, 170)"
             bg="#F1F2F9"
             borderRadius="8"
@@ -138,7 +114,7 @@ function ProfileUpdate() {
             onChangeText={(address) => {
               setUpdate({ ...update, address });
             }}
-            defaultValue={authStore.user?.profile.address}
+            // value={authStore.user?.profile.address}
           />
           <FormControl.Label mt="5">Age</FormControl.Label>
           <Input
@@ -153,7 +129,6 @@ function ProfileUpdate() {
             onChangeText={(age) => {
               setUpdate({ ...update, age });
             }}
-            defaultValue={authStore.user?.profile.age}
           />
 
           <Button
@@ -168,7 +143,7 @@ function ProfileUpdate() {
             marginLeft="270"
             onPress={handleSubmit}
           >
-            Update
+            Submit
           </Button>
         </Stack>
       </FormControl>

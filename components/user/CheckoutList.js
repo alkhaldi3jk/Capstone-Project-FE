@@ -11,7 +11,9 @@ function CheckoutList({ navigation }) {
   return (
     <Center>
       <VStack space="5">{optionList}</VStack>
-      <Button onPress={requestStore.checkout}>Checkout</Button>
+      <Button backgroundColor="#4f59b1" onPress={requestStore.checkout}>
+        Checkout
+      </Button>
     </Center>
   );
 }

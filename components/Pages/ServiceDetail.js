@@ -20,8 +20,7 @@ import {
   Text,
 } from "native-base";
 import { baseURL } from "../../stores/instance";
-import RequestList from "./RequestList";
-import RequestUpdate from "./RequestUpdate";
+import OptionList from "./OptionList";
 import CheckoutButton from "../user/CheckoutButton";
 
 function ServiceDetail({ route, navigation }) {
@@ -62,13 +61,13 @@ function ServiceDetail({ route, navigation }) {
           </AspectRatio>
           <Heading
             padding="5"
-            textAlign="left"
+            textAlign="right"
             color="white"
             fontWeight="400"
             font-family="lucida grande', tahoma, verdana, arial, sans-serif"
             position="absolute"
             bottom="0"
-            px="3"
+            px="30"
             py="1.5"
           >
             {service.name}
@@ -84,26 +83,28 @@ function ServiceDetail({ route, navigation }) {
             // fontSize="10"
             fontFamily="normal"
             fontSize="11px"
+            mt="3"
+            width="370"
           >
             <Heading
               size="sm"
               mt="2"
-              ml="-5"
-              px="6"
+              ml="0"
               color="#474A4D"
               fontStyle="italic"
               padding="5"
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="1"
             >
               About This Service
             </Heading>
             <Text
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="0.5"
-              px="6"
+              ml="5"
+              mr="5"
               color="#5F6467"
             >
               {service.about}
@@ -112,11 +113,11 @@ function ServiceDetail({ route, navigation }) {
             <Button
               mt="1"
               mb="4"
-              ml="280"
+              ml="5"
               borderRadius="8"
-              backgroundColor="#B8B3BE"
-              padding="2"
-              size="10"
+              backgroundColor="#4f59b1"
+              padding="1"
+              size="8"
               width="20"
               textAlign="center"
               overflow="visible"
@@ -125,14 +126,14 @@ function ServiceDetail({ route, navigation }) {
               Pricing
             </Button>
             <Text
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="0.5"
               color="#5F6467"
-              px="6"
               mb="5"
+              ml="5"
             >
-              Requests are curated based on your budget.
+              Options are curated based on your budget.
             </Text>
           </Box>
           <Box>
@@ -146,36 +147,38 @@ function ServiceDetail({ route, navigation }) {
             onHoverIn="1.1"
             fontSize="10"
             fontFamily="normal"
-            width="390"
+            width="370"
+            height="500"
           >
             <Heading
               size="sm"
               mt="2"
-              ml="-5"
-              px="6"
+              ml="0"
               color="#474A4D"
               fontStyle="italic"
               padding="5"
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="1"
             >
               Preferences
             </Heading>
             <Text
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="0.5"
-              px="6"
+              ml="5"
+              mr="5"
               color="#5F6467"
             >
               {service.preferences1}
             </Text>
             <Text
-              textAlign="right"
+              textAlign="left"
               font-family="lucida grande', tahoma, verdana, arial, sans-serif"
               letterSpacing="0.5"
-              px="6"
+              ml="5"
+              mr="5"
               color="#5F6467"
             >
               {service.preferences2}
@@ -184,23 +187,26 @@ function ServiceDetail({ route, navigation }) {
             <Input
               variant="outline"
               top="3"
-              px="6"
+              px="1"
               mb="10"
-              w="300"
-              h="50"
-              ml="70"
+              w="330"
+              h="71"
+              ml="5"
+              multiline
+              numberOfLines={4}
+              padding="3"
               placeholder="e.g., I want a bouquet with mixed vibrant colors from a local florist."
             />
             <FormControl isRequired isInvalid>
-              <FormControl.Label ml="290">Pick a day</FormControl.Label>
+              <FormControl.Label ml="5">Pick a date</FormControl.Label>
               <Button
                 leftIcon={<Icon as={Fontisto} name="date" size="sm" />}
                 color="#4f59b1"
                 mt="1"
-                backgroundColor="#B8B3BE"
-                size="20"
+                backgroundColor="#4f59b1"
+                size="10"
                 title={"Pick a date"}
-                ml="290"
+                ml="5"
                 onPress={openDatePicker}
               />
               <DatePicker
@@ -208,12 +214,13 @@ function ServiceDetail({ route, navigation }) {
                 mode={"single"}
                 onCancel={onCancel}
                 onConfirm={onConfirm}
-                color="F1F2F9"
+                color="#4f59b1"
                 backgroundColor="#4F59B1"
                 headerColor="#4f59b1"
                 colorOptions={colorOptions}
               />
             </FormControl>
+
             <Button
             _pressed={{ bg: "white"}} 
               leftIcon={
@@ -240,13 +247,14 @@ function ServiceDetail({ route, navigation }) {
               alignItems="center"
               marginLeft="50"
               marginRight="50" // centers the button
-              marginBottom="40"
+              marginBottom="0"
               onPress={() => navigation.navigate("Home")}
             >
-              Request
+              Option
             </Button>
-            {/* <RequestList options={service.option} /> */}
+            <OptionList options={service.option} />
             <CheckoutButton navigation={navigation}/>
+
           </Box>
         </Center>
       </View>

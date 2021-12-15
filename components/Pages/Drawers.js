@@ -17,6 +17,8 @@ import {
   MaterialIcons,
   Entypo,
   FontAwesome5,
+  Clarity,
+  Feather,
 } from "@expo/vector-icons";
 import {
   NativeBaseProvider,
@@ -40,6 +42,9 @@ import Past from "./Past";
 import ServiceList from "./ServiceList";
 import ServiceNav from "../Navigation/ServiceNav";
 import ToDoList from "./ToDoList/ToDoList";
+import CheckoutButton from "../user/CheckoutButton";
+import CheckoutList from "../user/CheckoutList";
+
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
   return (
@@ -71,7 +76,14 @@ const getIcon = (screenName) => {
       return "progress-check";
     case "Upcoming Requests":
       return "progress-clock";
+
    
+
+    case "Past Requests":
+      return "progress-close";
+    case "Checkout":
+      return "cart";
+
     default:
       return undefined;
   }
@@ -82,7 +94,23 @@ function CustomDrawerContent(props) {
 
   return (
     <DrawerContentScrollView {...props} safeArea>
+
      
+
+
+      <IconButton
+        icon={<Icon as={Feather} name="bell" />}
+        borderRadius="full"
+        _icon={{
+          color: "#4f59b1",
+          bg: "white",
+          size: "sm",
+        }}
+        _ios={{
+          _icon: {
+            size: "2xl",
+          },
+        }}
 
       <VStack space="6" my="2" mx="1">
         <Box px="4">
@@ -111,13 +139,13 @@ function CustomDrawerContent(props) {
               >
                 <HStack space="7" alignItems="center">
                   <Icon
-                    color={index === props.state.index ? "violet.700" : "black"}
+                    color={index === props.state.index ? "#4f59b1" : "black"}
                     size="5"
                     as={<MaterialCommunityIcons name={getIcon(name)} />}
                   />
                   <Text
                     fontWeight="500"
-                    color={index === props.state.index ? "violet.700" : "black"}
+                    color={index === props.state.index ? "#4f59b1" : "black"}
                   >
                     {name}
                   </Text>
@@ -230,6 +258,11 @@ function MyDrawer() {
         <Drawer.Screen name="Upcoming Requests" component={Pending} />
         <Drawer.Screen name="My To-Do's" component={ToDoList} />
         {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
+        <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
+        <Drawer.Screen name="Pending Requests" component={Pending} />
+        <Drawer.Screen name="Past Requests" component={Past} />
+        <Drawer.Screen name="Checkout" component={CheckoutList} />
+
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
       </Drawer.Navigator>
     </Box>
