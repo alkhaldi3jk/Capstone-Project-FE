@@ -14,15 +14,13 @@ import FormExample from "../Pages/FormExample";
 import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
 import Pricing from "../Pages/Pricing";
-import UserItem from "../user/UserItem"
+import UserItem from "../user/UserItem";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
-
+  // initialRouteName="Home"
   return (
-
-    <Navigator initialRouteName="AboutUs">
-
+    <Navigator>
       {/* <Screen
             name="UserItem"
             component={UserItem}

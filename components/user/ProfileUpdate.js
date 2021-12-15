@@ -90,7 +90,7 @@ function ProfileUpdate() {
         textAlign="left"
         font-family="lucida grande', tahoma, verdana, arial, sans-serif"
       >
-        Update Profile:
+        Help Maia get to know you:
       </Text>
       <FormControl>
         <Stack mx={5}>
@@ -98,7 +98,7 @@ function ProfileUpdate() {
           <Input
             p={2}
             mt="0.1"
-            placeholder={authStore.user?.profile.name}
+            placeholder="Type your name..."
             placeholderTextColor="rgb(170, 170, 170)"
             bg="#F1F2F9"
             borderRadius="8"
@@ -156,7 +156,6 @@ function ProfileUpdate() {
             }}
             defaultValue={authStore.user?.profile.age}
           />
-  
 
           <Button
             mt="9"

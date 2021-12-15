@@ -21,11 +21,11 @@ function Signup({ navigation }) {
     username: "",
     email: "",
     password: "",
-    // profile: {
-    //   name: "",
-    //   address: "",
-    //   age: "",
-    // },
+    profile: {
+      name: "",
+      address: "",
+      age: "",
+    },
   });
 
   const handleSubmit = async () => {
