@@ -89,6 +89,7 @@ function Home({ route, navigation }) {
             left="7"
           />
           <Button
+          _pressed={{ bg: "#4f59b1"}} 
             leftIcon={<Icon as={Feather} name="user" size="sm" />}
             bg="white"
             // TouchableHighlight="#4f59b1"
