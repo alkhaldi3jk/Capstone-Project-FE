@@ -20,16 +20,11 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="ProfileUpdate">
-      {/* <Screen
-            name="UserItem"
-            component={UserItem}
-            options={{
-              headerShown: false,
-            }}
-          /> */}
+    <Navigator initialRouteName="UserItem">
+     
       {!authStore.user ? (
         <>
+        
           <Screen
             name="Home"
             component={Home}
