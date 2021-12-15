@@ -122,7 +122,7 @@ function Signin({ navigation }) {
             size="10"
             width="20"
             textAlign="center"
-            overflow="visible"
+            // overflow="visible"
             marginLeft="195"
             onPress={handleSubmit}
           >

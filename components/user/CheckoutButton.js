@@ -6,7 +6,7 @@ import authStore from "../../stores/authStore";
 import requestStore from "../../stores/RequestStore";
 import CheckoutList from "./CheckoutList";
 
-function CheckoutButton({navigation}) {
+function CheckoutButton({ navigation }) {
   const handlePress = () => {
     if (authStore.user) navigation.navigate("CheckoutList");
     else {
@@ -28,22 +28,22 @@ function CheckoutButton({navigation}) {
 
   return (
     <View>
-      <Badge // bg="red.400"
-        bg="red.400"
-        colorScheme="danger"
+      {/* <Badge // bg="red.400"
+        colorScheme="default"
         rounded="999px"
         mb={-2}
+        ml={2}
         zIndex={1}
         variant="solid"
-        alignSelf="flex-end"
+        alignSelf="flex-start"
         _text={{
           fontSize: 12,
         }}
       >
-          Badge
-      </Badge>
+        {requestStore.totalQuantity}
+      </Badge> */}
 
-      <Icon name="cart" size={40} mr={4} onPress={handlePress} />
+      <Icon name="cart" size={33} mr={4} onPress={handlePress} />
     </View>
   );
 }

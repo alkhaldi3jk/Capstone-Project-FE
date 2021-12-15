@@ -38,11 +38,12 @@ class AuthStore {
       instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     } catch (error) {}
   };
+
   signup = async (userData, navigation, toast) => {
     try {
       const response = await instance.post("/signup", userData);
       this.setUser(response.data.token);
-      navigation.replace("ServiceList");
+      navigation.navigate("ServiceList");
     } catch (error) {
       console.log(error);
     }
@@ -112,7 +113,6 @@ class AuthStore {
   //   }
   // };
 }
-
 
 const authStore = new AuthStore();
 authStore.checkForToken();
