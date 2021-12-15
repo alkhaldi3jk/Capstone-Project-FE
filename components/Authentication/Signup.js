@@ -30,23 +30,21 @@ function Signup({ navigation }) {
 
   return (
     <Center>
-      <Box safeArea p="2" py="62" w="90%" maxW="290">
+      <Box safeArea p="2" py="80" w="90%" maxW="290">
         <AnimatedLottieView
           source={require("../../assets/logo-withoutbg.json")}
           loop
-        autoPlay
+          autoPlay
           alt="Maia Logo"
           size="117"
-          mt="20"
-          mb="16"
-          ml="20"
-          mr="-10"
+          marginTop={-195}
         />
         {/* <AnimatedLottieView
         source={require("../../assets/logo-withoutbg.json")}
         loop
         autoPlay/> */}
         <Heading
+          mt="140"
           size="lg"
           fontWeight="600"
           color="coolGray.800"
