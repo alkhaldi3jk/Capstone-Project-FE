@@ -20,7 +20,7 @@ const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="UserItem">
+    <Navigator initialRouteName="ServiceList">
      
       {!authStore.user ? (
         <>

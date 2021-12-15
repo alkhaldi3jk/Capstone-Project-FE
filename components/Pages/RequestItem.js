@@ -42,7 +42,7 @@ const RequestItem = ({ option }) => {
     return (
       <HStack w="100%" alignItems="center" space="3">
         <VStack>
-          <Text>{option.name}</Text>
+          {/* <Text>{option.name}</Text> */}
           <Button
             leftIcon={<Icon as={Fontisto} name="date" size="sm" />}
             color="#4f59b1"
