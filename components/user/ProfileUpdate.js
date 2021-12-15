@@ -14,6 +14,9 @@ import authStore from "../../stores/authStore";
 
 function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
+  const [disable, setDisable] = useState(
+    
+  );
 
   const handleSubmit = () => {
     authStore.updateProfile(update);
@@ -41,7 +44,7 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
-            defaultValue={authStore.user?.profile.name}
+            value={authStore.user?.profile.name}
             // isDisabled={true}
           />
 
