@@ -20,12 +20,16 @@ function ProfileUpdate() {
     
   );
 
+
+
+
   const handleSubmit = () => {
     authStore.updateProfile(update);
   };
 
   return (
     <View>
+      <Text>{console.log(authStore.user.requests)}</Text>
       <Text
         mt="5"
         px="7"

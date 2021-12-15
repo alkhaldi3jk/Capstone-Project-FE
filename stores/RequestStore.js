@@ -6,14 +6,14 @@ class RequestStore {
   constructor() {
     makeAutoObservable(this);
   }
-  options = [
+  requests = [
     // detail:{}
   ];
 
-  fetchOption = async () => {
+  fetchRequset = async () => {
     try {
-      const res = await instance.get("/options");
-      this.items = res.data;
+      const res = await instance.get("/requests");
+      this.requests = res.data;
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -61,13 +61,13 @@ class RequestStore {
 
   checkout = async () => {
     try {
-      const cart = this.items.map((item) => ({
-        ...item, //another soultion remove line 82 keep 84
-        option: item.option._id,
+      const cart = this.requests.map((request) => ({
+        ...request, //another soultion remove line 82 keep 84
+        request: request.option._id,
       }));
       // console.log(cart); //check
-      const res = await instance.post("/requests/checkout", { items: cart });
-      this.items = [];
+      const res = await instance.post("/requests/checkout", { requests: cart });
+      this.requests = [];
       await AsyncStorage.removeItem("myCart");
       alert("Thank you for your trust");
     } catch (error) {
@@ -78,5 +78,5 @@ class RequestStore {
 
 const requestStore = new RequestStore();
 
-requestStore.fetchOption();
+requestStore.fetchRequset();
 export default requestStore;

@@ -20,8 +20,7 @@ import {
   Text,
 } from "native-base";
 import { baseURL } from "../../stores/instance";
-import RequestList from "./RequestList";
-import RequestUpdate from "./RequestUpdate";
+import OptionList from "./OptionList";
 import CheckoutButton from "../user/CheckoutButton";
 
 function ServiceDetail({ route, navigation }) {
@@ -132,7 +131,7 @@ function ServiceDetail({ route, navigation }) {
               px="6"
               mb="5"
             >
-              Requests are curated based on your budget.
+              Options are curated based on your budget.
             </Text>
           </Box>
           <Box>
@@ -242,9 +241,9 @@ function ServiceDetail({ route, navigation }) {
               marginBottom="40"
               onPress={() => navigation.navigate("Home")}
             >
-              Request
+              Option
             </Button>
-            {/* <RequestList options={service.option} /> */}
+            <OptionList options={service.option} />
             <CheckoutButton navigation={navigation}/>
           </Box>
         </Center>
