@@ -13,6 +13,7 @@ import {
   HStack,
   Center,
   Link,
+  Image,
 } from "native-base";
 
 function Signup({ navigation }) {
@@ -20,6 +21,11 @@ function Signup({ navigation }) {
     username: "",
     email: "",
     password: "",
+    profile: {
+      name: "",
+      address: "",
+      age: "",
+    },
   });
 
   const handleSubmit = async () => {
@@ -28,7 +34,16 @@ function Signup({ navigation }) {
 
   return (
     <Center>
-      <Box safeArea p="2" py="80" w="90%" maxW="290">
+      <Box safeArea p="2" py="62" w="90%" maxW="290">
+        <Image
+          source={require("../../assets/maia_logo_blueish.png")}
+          alt="Maia Logo"
+          size="117"
+          mt="20"
+          mb="16"
+          ml="20"
+          mr="-10"
+        />
         <Heading
           size="lg"
           fontWeight="600"
@@ -135,6 +150,58 @@ function Signup({ navigation }) {
               onChangeText={(password) => setUser({ ...user, password })}
             />
           </FormControl>
+          {/* <FormControl>
+            <FormControl.Label
+              lineHeight="1.4"
+              fontWeight="500"
+              lineHeight="0.9"
+              letterSpacing="-1.5"
+              overflow="visible"
+              flexWrap="wrap"
+              position="relative"
+              height="1"
+              right="-10"
+              zIndex="2"
+            >
+              Address
+            </FormControl.Label>
+            <Input
+              placeholder="Area, block, street, house..."
+              placeholderTextColor="rgb(170, 170, 170)"
+              bg="#F1F2F9"
+              borderRadius="8"
+              borderWidth="2"
+              fontSize="14"
+              type="address"
+              onChangeText={(address) => setUser({ ...user.profile, address })}
+            />
+          </FormControl>
+          <FormControl>
+            <FormControl.Label
+              lineHeight="1.4"
+              fontWeight="500"
+              lineHeight="0.9"
+              letterSpacing="-1.5"
+              overflow="visible"
+              flexWrap="wrap"
+              position="relative"
+              height="1"
+              right="-10"
+              zIndex="2"
+            >
+              Age
+            </FormControl.Label>
+            <Input
+              placeholder="Type age..."
+              placeholderTextColor="rgb(170, 170, 170)"
+              bg="#F1F2F9"
+              borderRadius="8"
+              borderWidth="2"
+              fontSize="14"
+              type="age"
+              onChangeText={(age) => setUser({ ...user.profile, age })}
+            />
+          </FormControl> */}
           <Button
             mt="1"
             borderRadius="8"

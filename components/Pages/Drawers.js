@@ -60,7 +60,7 @@ const getIcon = (screenName) => {
       return "credit-card-settings-outline";
     case "Services & Requests":
       return "microphone-settings";
-    case "Profile":
+    case "My Profile":
       return "account-settings";
     case "Complaints":
       return "alert-circle";
@@ -260,7 +260,7 @@ function MyDrawer() {
       >
         {/* <Drawer.Screen name="Home" component={Home} /> */}
         <Drawer.Screen name="Services & Requests" component={ServiceNav} />
-        <Drawer.Screen name="Profile" component={ProfileUpdate} />
+        <Drawer.Screen name="My Profile" component={ProfileUpdate} />
         <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
         <Drawer.Screen name="Pending Requests" component={Pending} />
         <Drawer.Screen name="Past Requests" component={Past} />

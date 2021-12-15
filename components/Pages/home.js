@@ -5,7 +5,6 @@ import ServiceItem from "./ServiceItem";
 import { observable } from "mobx";
 import { observer } from "mobx-react-lite";
 import Signin from "../Authentication/Signin";
-import { Text } from "react-native";
 import {
   Heading,
   Icon,
@@ -17,7 +16,7 @@ import {
   View,
   Box,
   ScrollView,
-  
+  Text,
 } from "native-base";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
@@ -45,12 +44,12 @@ function Home({ route, navigation }) {
             height="90"
             width="400"
             color="#000000"
-            // fontFamily="Epilogue"
             fontSize="xl"
             letterSpacing="0"
             textAlign="center"
             line-height="25"
-            fontFamily="Epilogue-seminold"
+            font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+            fontWeight="500"
           >
             Welcome home, we're Maia.
           </Heading>
@@ -66,7 +65,8 @@ function Home({ route, navigation }) {
             mx="6"
             letterSpacing="0"
             lineHeight="22"
-            fontFamily="Epilogue"
+            font-family="lucida grande', tahoma, verdana, arial, sans-serif"
+            fontWeight="300"
           >
             The first app-based personal assistant designed for the future of
             living.
@@ -92,7 +92,7 @@ function Home({ route, navigation }) {
             leftIcon={<Icon as={Feather} name="user" size="sm" />}
             bg="white"
             // TouchableHighlight="#4f59b1"
-            activeOpacity="#4f59b1"
+            // activeOpacity="#4f59b1"
             borderRadius="6"
             // padding="3.5"
             alignment="center"
@@ -109,7 +109,7 @@ function Home({ route, navigation }) {
             alignItems="center"
             marginLeft="50"
             marginRight="50" // centers the button
-            onPress={() => navigation.navigate("Signin")} 
+            onPress={() => navigation.navigate("Signin")}
           >
             Sign in
           </Button>

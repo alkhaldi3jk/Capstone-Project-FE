@@ -1,3 +1,4 @@
+
 import React from "react";
 import userStore from "../../stores/userStore";
 import UserItem from "./UserItem";
@@ -7,7 +8,8 @@ function UserList() {
       <UserItem user={user} key={user._id} />
   ));
 
-  return <div>{userList}</div>;
-}
 
-export default observer(UserList);
+//   return <div>{userList}</div>;
+// }
+
+// export default observer(UserList);

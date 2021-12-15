@@ -13,6 +13,7 @@ import {
   HStack,
   Center,
   Link,
+  Image,
 } from "native-base";
 
 function Signin({ navigation }) {
@@ -29,7 +30,16 @@ function Signin({ navigation }) {
 
   return (
     <Center>
-      <Box safeArea p="2" py="80" w="90%" maxW="290">
+      <Box safeArea p="2" py="8" w="90%" maxW="290">
+        <Image
+          source={require("../../assets/maia_logo_blueish.png")}
+          alt="Maia Logo"
+          size="117"
+          mt="20"
+          mb="158"
+          ml="20"
+          mr="-10"
+        />
         <Heading
           size="lg"
           fontWeight="600"

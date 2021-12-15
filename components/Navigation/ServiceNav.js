@@ -5,6 +5,7 @@ import ServiceDetail from "../Pages/ServiceDetail";
 import UserList from "../user/UserList"
 import { observer } from "mobx-react";
 import { Pricing } from "../Pages/Pricing";
+import CheckoutList from "../user/CheckoutList";
 
 const ServiceNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -23,6 +24,15 @@ const ServiceNavigator = () => {
         component={ServiceList}
         options={{
           headerShown: false,
+        }}
+      />
+      <Screen
+        name="CheckoutList"
+        component={CheckoutList}
+        options={{
+          headerStyle: {
+            backgroundColor: "#ffd1dc",
+          },
         }}
       />
 

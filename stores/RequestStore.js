@@ -6,21 +6,19 @@ class RequestStore {
   constructor() {
     makeAutoObservable(this);
   }
-  items = [
+  options = [
     // detail:{}
   ];
-
 
   fetchOption = async () => {
     try {
       const res = await instance.get("/options");
       this.items = res.data;
-      console.log(res.data)
+      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
   };
-
 
   // addRequest = async (option) => {
   //   try {
@@ -45,15 +43,11 @@ class RequestStore {
       const findRequest = this.items.find(
         (item) => item.option._id === option._id
       );
-      if (findRequest) {
-        findRequest.option = option;
-      } else {
-        const newRequest = {
-          option: option,
-        };
-        this.items.push(newRequest);
-      }
-      const response = await instance.post("/request", formData);
+      const newRequest = {
+        option: option,
+      };
+      this.items.push(newRequest);
+      const response = await instance.post("/request", newRequest);
       this.items.push(response.data);
     } catch (error) {
       console.log(error);
@@ -72,16 +66,13 @@ class RequestStore {
         option: item.option._id,
       }));
       // console.log(cart); //check
-      const res = await instance.post("/checkout", { items: cart });
+      const res = await instance.post("/requests/checkout", { items: cart });
       this.items = [];
-      alert("I'm a cute message");
       await AsyncStorage.removeItem("myCart");
       alert("Thank you for your trust");
     } catch (error) {
       console.log(error);
     }
-
-
   };
 }
 

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { DataTable } from 'react-native-paper';
@@ -39,3 +40,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
 });
+
