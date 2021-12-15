@@ -68,7 +68,8 @@ export const Pricing = () => {
           <Text mb="4">Services Providers by Maia-approved local vendors</Text>
 
           <Box
-            bg="#B8B3BE"
+            bg="#4f59b1"
+            opacity="0.8"
             p="5"
             rounded="8"
             flexShrink="1"
@@ -121,7 +122,7 @@ export const Pricing = () => {
             <Divider
               bg="white"
               thickness="2"
-              width="90"
+              width="330"
               orientation="horizonal"
               mt="7"
               mb="4"
@@ -157,8 +158,8 @@ export const Pricing = () => {
               overseen by your personal Maia. These costs vary by area, and Maia
               takes full responsibility for the quality of these services.
             </Text>
-            <Text mt="2" fontSize="sm" color="white" bold>
-              Ex: home cleaning, handman, car washes, etc.{" "}
+            <Text mt="2" mb="2" fontSize="sm" color="white" bold>
+              Ex: home cleaning, handyman, car washes, etc.
             </Text>
             <Flex></Flex>
           </Box>
