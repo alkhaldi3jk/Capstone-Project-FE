@@ -41,8 +41,10 @@ import Pending from "./Pending";
 import Past from "./Past";
 import ServiceList from "./ServiceList";
 import ServiceNav from "../Navigation/ServiceNav";
+import ToDoList from "./ToDoList/ToDoList";
 import CheckoutButton from "../user/CheckoutButton";
 import CheckoutList from "../user/CheckoutList";
+
 const Drawer = createDrawerNavigator();
 function Drawers(props) {
   return (
@@ -70,14 +72,18 @@ const getIcon = (screenName) => {
       return "alert-circle";
     case "logout":
       return "logout";
-    case "Upcoming Requests":
+    case "My To-Do's":
       return "progress-check";
-    case "Pending Requests":
+    case "Upcoming Requests":
       return "progress-clock";
+
+   
+
     case "Past Requests":
       return "progress-close";
     case "Checkout":
       return "cart";
+
     default:
       return undefined;
   }
@@ -88,6 +94,10 @@ function CustomDrawerContent(props) {
 
   return (
     <DrawerContentScrollView {...props} safeArea>
+
+     
+
+
       <IconButton
         icon={<Icon as={Feather} name="bell" />}
         borderRadius="full"
@@ -101,7 +111,7 @@ function CustomDrawerContent(props) {
             size: "2xl",
           },
         }}
-      />
+
       <VStack space="6" my="2" mx="1">
         <Box px="4">
           <Text bold color="gray.700">
@@ -245,10 +255,14 @@ function MyDrawer() {
         {/* <Drawer.Screen name="Home" component={Home} /> */}
         <Drawer.Screen name="Services & Requests" component={ServiceNav} />
         <Drawer.Screen name="My Profile" component={ProfileUpdate} />
+        <Drawer.Screen name="Upcoming Requests" component={Pending} />
+        <Drawer.Screen name="My To-Do's" component={ToDoList} />
+        {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
         <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
         <Drawer.Screen name="Pending Requests" component={Pending} />
         <Drawer.Screen name="Past Requests" component={Past} />
         <Drawer.Screen name="Checkout" component={CheckoutList} />
+
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
       </Drawer.Navigator>
     </Box>

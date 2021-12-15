@@ -25,7 +25,7 @@ export  default function ToDoList() {
 
         {/*Todays Task Comp  */}
         <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's Tasks</Text>
+        <Text style={styles.sectionTitle}>What are we up to today?</Text>
         <View style={styles.items}>
             {/* This is where the tasks will go */}
             {
