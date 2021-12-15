@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Fontisto } from "@expo/vector-icons";
 import DatePicker from "react-native-neat-date-picker";
 
-const RequestItem = ({ option }) => {
+const OptionItem = ({ option }) => {
   const colorOptions = {
     headerColor: "#4F59B1",
     backgroundColor: "#FFF8F0",
@@ -70,4 +70,4 @@ const RequestItem = ({ option }) => {
   };
 };
 
-export default observer(RequestItem);
+export default observer(OptionItem);
