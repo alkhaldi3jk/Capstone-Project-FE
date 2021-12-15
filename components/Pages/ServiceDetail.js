@@ -22,6 +22,7 @@ import {
 import { baseURL } from "../../stores/instance";
 import RequestList from "./RequestList";
 import RequestUpdate from "./RequestUpdate";
+import CheckoutButton from "../user/CheckoutButton";
 
 function ServiceDetail({ route, navigation }) {
   const colorOptions = {
@@ -243,7 +244,8 @@ function ServiceDetail({ route, navigation }) {
             >
               Request
             </Button>
-            <RequestList options={service.option} />
+            {/* <RequestList options={service.option} /> */}
+            <CheckoutButton navigation={navigation}/>
           </Box>
         </Center>
       </View>

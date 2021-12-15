@@ -16,6 +16,9 @@ import authStore from "../../stores/authStore";
 
 function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
+  const [disable, setDisable] = useState(
+    
+  );
 
   const handleSubmit = () => {
     authStore.updateProfile(update);
@@ -107,8 +110,8 @@ function ProfileUpdate() {
             onChangeText={(name) => {
               setUpdate({ ...update, name });
             }}
+            value={authStore.user?.profile.name}
 
-            // value={authStore.user?.profile.name}
             // isDisabled={true}
           />
           {/* <FormControl.Label mt="5">Email:</FormControl.Label>

@@ -1,3 +1,4 @@
+
 // import React from 'react';
 // import { View, StyleSheet } from 'react-native';
 // import { DataTable } from 'react-native-paper';
@@ -49,4 +50,6 @@
 //     paddingTop: 100,
 //     paddingHorizontal: 30,
 //   },
+
 // });
+
