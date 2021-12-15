@@ -2,7 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import ServiceList from "../Pages/ServiceList";
 import ServiceDetail from "../Pages/ServiceDetail";
-
+import UserList from "../user/UserList"
 import { observer } from "mobx-react";
 import { Pricing } from "../Pages/Pricing";
 import CheckoutList from "../user/CheckoutList";
@@ -11,7 +11,14 @@ const ServiceNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
-    <Navigator initialRouteName="ServiceList">
+    <Navigator initialRouteName="UserList">
+      <Screen
+            name="UserList"
+            component={UserList}
+            options={{
+              headerShown: false,
+            }}
+          />
       <Screen
         name="ServiceList"
         component={ServiceList}

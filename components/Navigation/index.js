@@ -24,6 +24,7 @@ const RootNavigator = () => {
   // initialRouteName="Home"
   return (
 
+
     <Navigator initialRouteName="Home">
 
       {/* <Screen
@@ -35,7 +36,7 @@ const RootNavigator = () => {
           /> */}
       {!authStore.user ? (
         <>
-    
+
           <Screen
             name="Home"
             component={Home}
