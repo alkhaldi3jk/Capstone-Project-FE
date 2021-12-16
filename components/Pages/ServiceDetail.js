@@ -222,7 +222,7 @@ function ServiceDetail({ route, navigation }) {
             </FormControl>
 
             <Button
-            _pressed={{ bg: "white"}} 
+              _pressed={{ bg: "white" }}
               leftIcon={
                 <Icon as={FontAwesome5} name="concierge-bell" size="sm" />
               }
@@ -248,13 +248,12 @@ function ServiceDetail({ route, navigation }) {
               marginLeft="50"
               marginRight="50" // centers the button
               marginBottom="0"
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Thankyou")}
             >
-              Option
+              Request
             </Button>
-            <OptionList options={service.option} />
-            <CheckoutButton navigation={navigation}/>
-
+            {/* <OptionList options={service.option} /> */}
+            {/* <CheckoutButton navigation={navigation} /> */}
           </Box>
         </Center>
       </View>

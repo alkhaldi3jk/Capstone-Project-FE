@@ -173,7 +173,7 @@ function MyDrawer() {
         {/* <Drawer.Screen name="Upcoming Requests" component={Upcoming} />
         <Drawer.Screen name="Pending Requests" component={Pending} /> */}
         {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
-        <Drawer.Screen name="Checkout" component={CheckoutList} />
+        {/* <Drawer.Screen name="Checkout" component={CheckoutList} /> */}
 
         {/* <Drawer.Screen label="logout" onPress={() => authStore.signOut()} /> */}
       </Drawer.Navigator>
