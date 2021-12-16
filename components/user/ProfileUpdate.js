@@ -19,18 +19,15 @@ function ProfileUpdate() {
   const [update, setUpdate] = useState(authStore.user?.profile);
   const [disable, setDisable] = useState();
 
-
-
-
   const handleSubmit = () => {
     authStore.updateProfile(update);
   };
 
   return (
     <View>
-      <Text>{console.log(authStore.user.requests)}</Text>
       <Text
         mt="5"
+        mb="6"
         px="7"
         fontStyle="italic"
         opacity="0.5"
@@ -43,14 +40,27 @@ function ProfileUpdate() {
       <AnimatedLottieView
         source={require("../../assets/logo-withoutbg.json")}
         loop
-        autoPlay/>
+        autoPlay
+        marginTop={-145}
+        marginLeft={-35}
+        marginRight={130}
+      />
+      {/* <Image
+        source={require("../../assets/maia_logo_blueish.png")}
+        alt="Maia Logo"
+        size="120"
+        mt="1"
+        // mb="158"
+        ml="13"
+        // mr="-10"
+      /> */}
       <Heading
-        mt="5"
+        mt="162"
         mb="1"
         textAlign="left"
         font-family="lucida grande', tahoma, verdana, arial, sans-serif"
         letterSpacing="0.5"
-        px="7"
+        px="5"
         color="#5F6467"
       >
         {authStore.user?.profile.name}
@@ -130,7 +140,6 @@ function ProfileUpdate() {
               setUpdate({ ...update, age });
             }}
           />
-
           <Button
             mt="9"
             borderRadius="8"

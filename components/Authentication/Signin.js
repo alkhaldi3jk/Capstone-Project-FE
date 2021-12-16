@@ -31,12 +31,14 @@ function Signin({ navigation }) {
 
   return (
     <Center>
-      <Box safeArea p="2" py="8" w="90%" maxW="290">
+      <Box safeArea p="2" py="80" w="90%" maxW="290">
         <AnimatedLottieView
-        source={require("../../assets/logo-withoutbg.json")}
-        loop
-        autoPlay/>
-        <Image
+          source={require("../../assets/logo-withoutbg.json")}
+          loop
+          autoPlay
+          marginTop={-165}
+        />
+        {/* <Image
           source={require("../../assets/maia_logo_blueish.png")}
           alt="Maia Logo"
           size="117"
@@ -44,8 +46,9 @@ function Signin({ navigation }) {
           mb="158"
           ml="20"
           mr="-10"
-        />
+        /> */}
         <Heading
+          mt="180"
           size="lg"
           fontWeight="600"
           color="coolGray.800"

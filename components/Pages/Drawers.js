@@ -70,12 +70,14 @@ const getIcon = (screenName) => {
       return "alert-circle";
     case "logout":
       return "logout";
-    case "Upcoming Requests":
+    case "Requests":
       return "progress-clock";
     case "My To-Do's":
       return "progress-check";
     case "Checkout":
       return "cart";
+    case "My To-Do's":
+      return "clipboard-text";
     default:
       return undefined;
   }
@@ -86,8 +88,6 @@ function CustomDrawerContent(props) {
 
   return (
     <DrawerContentScrollView {...props} safeArea>
-
-
       <VStack space="6" my="2" mx="1">
         <Box px="4">
           <Text bold color="gray.700">
@@ -167,7 +167,7 @@ function MyDrawer() {
         {/* <Drawer.Screen name="Home" component={Home} /> */}
         <Drawer.Screen name="Services & Requests" component={ServiceNav} />
         <Drawer.Screen name="My Profile" component={ProfileUpdate} />
-        <Drawer.Screen name="Upcoming Requests" component={UserAppointment} />
+        <Drawer.Screen name="Requests" component={UserAppointment} />
         <Drawer.Screen name="My To-Do's" component={ToDoList} />
         {/* <Drawer.Screen name="Past Requests" component={Past} /> */}
         {/* <Drawer.Screen name="Upcoming Requests" component={Upcoming} />

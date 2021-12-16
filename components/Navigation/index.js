@@ -13,16 +13,17 @@ import FormExample from "../Pages/FormExample";
 import UserAppointment from "../user/UserAppointment";
 import authStore from "../../stores/authStore";
 import Pricing from "../Pages/Pricing";
+
 import AboutUs from "../Pages/AboutUs";
 import CheckoutList from "../user/CheckoutList";
 import CheckoutButton from "../user/CheckoutButton";
 
 
+
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
-  // initialRouteName="Home"
+
   return (
-   
 
     <Navigator initialRouteName="Home">
       {/* <Screen
@@ -37,6 +38,7 @@ const RootNavigator = () => {
 
       {!authStore.user ? (
         <>
+
 
           <Screen
             name="Home"
@@ -67,13 +69,6 @@ const RootNavigator = () => {
           <Screen
             name="Drawer"
             component={Drawer}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Screen
-            name="Cart"
-            component={CheckoutButton}
             options={{
               headerShown: false,
             }}
