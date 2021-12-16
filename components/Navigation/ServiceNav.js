@@ -7,13 +7,13 @@ import { observer } from "mobx-react";
 import { Pricing } from "../Pages/Pricing";
 import CheckoutList from "../user/CheckoutList";
 import CheckoutButton from "../user/CheckoutButton";
+import Thankyou from "../user/Thankyou";
 
 const ServiceNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
     <Navigator>
-
       {/* <Screen
             name="UserList"
             component={UserList}
@@ -45,7 +45,13 @@ const ServiceNavigator = () => {
           headerShown: false,
         }}
       />
-
+      <Screen
+        name="Thankyou"
+        component={Thankyou}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Screen
         name="Pricing"
         component={Pricing}
