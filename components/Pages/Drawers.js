@@ -72,6 +72,8 @@ const getIcon = (screenName) => {
       return "logout";
     case "Requests":
       return "progress-clock";
+    case "My To-Do's":
+      return "progress-check";
     case "Checkout":
       return "cart";
     case "My To-Do's":
